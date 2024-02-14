@@ -52,8 +52,8 @@ const LandingPage = () => {
           <div className={styles.bar2} />
         </div>
         <div className={styles.missionStatement}>
-          Meeting the needs of business by closing the knowledge gap in
-          cybersecurity!
+          Meeting the needs of businesses and employees by closing the knowledge
+          gap in cybersecurity!
         </div>
         <div className={styles.cardContainer}>
           <Card
