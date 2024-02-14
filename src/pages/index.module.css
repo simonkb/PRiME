@@ -1,0 +1,142 @@
+.landingPage {
+  background-color: #1c1c28;
+  color: var(--medley-neutral);
+  font-family: var(--font-ropa-sans);
+  font-size: var(--font-size-sm);
+  height: 3400px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+.appName {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: larger;
+}
+.bars {
+  width: 40px;
+  border-radius: var(--br-81xl);
+  background-color: var(--medley-neutral);
+  height: 2px;
+}
+.motto {
+  width: 100%;
+  font-size: var(--font-size-21xl);
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-top: var(--gap-base);
+}
+.getStartedButton {
+  border-radius: var(--br-81xl);
+  background: linear-gradient(267.28deg, #7b61ff, #aa82ff);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-base);
+  font-size: var(--font-size-base);
+  margin-top: var(--gap-29xl);
+  align-items: center;
+  justify-content: center;
+}
+.homeText {
+  position: absolute;
+  top: 256px;
+  left: 50%;
+  align-items: center;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-29xl);
+}
+.scrollText {
+  font-weight: 600;
+  animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.downWardArrow {
+  width: 16px;
+  height: 24px;
+  animation:bounce 1s infinite alternate;
+}
+.scrollDownContainer {
+  position: relative;
+  top: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--medley-neutral);
+  font-family: var(--font-open-sans);
+}
+
+.bar2 {
+  width: 40px;
+  position: relative;
+  border-radius: var(--br-81xl);
+  background-color: var(--medley-accent);
+  height: 2px;
+}
+.mission {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--medley-accent);
+}
+.missionStatement {
+  width: 100%;
+  /* position: relative; */
+  font-size: var(--font-size-13xl);
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  margin-top: var(--gap-29xl);
+}
+.levels{
+  position: relative;
+  top: 1200px;
+  padding: 100px;
+}
+.levelsContainer{
+  max-height: 1080px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  overflow:scroll;
+}
+.cardContainer{
+  display: inline-flex;
+  width: 100%;
+  overflow:scroll;
+  justify-content: center;
+  padding-inline: 40px;
+}
+.aboutUsContainer {
+  position: relative;
+  top: 1031px;
+  margin-inline: 40px;
+  max-height: 1080;
+  padding-top: 180px;
+}
+.footer {
+  position: absolute;
+  top: 2950px;
+  width: 100%;
+}
+.footerTopBar {
+  background-color: var(--medley-primary-200);
+  width: 100%;
+  height: 10px;
+}

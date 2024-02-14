@@ -1,0 +1,30 @@
+.card {
+  background-color: var(--color-gray-400);
+  min-height: 350px;
+  margin: 40px;
+  font-size: larger;
+  width: fit-content;
+}
+
+.image {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.description {
+  position: relative;
+  text-align: justify;
+  padding: 10px;
+}
+.cardContent {
+  position: relative;
+  width: 100%;
+  height: 34px;
+  background: linear-gradient(267.28deg, #aa82ff,  #040112);
+}
+.title {
+  position: relative;
+  top: 8px;
+}

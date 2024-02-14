@@ -1,0 +1,28 @@
+.vectorIcon {
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.prime {
+  position: absolute;
+  display: inline-block;
+}
+.logo {
+  height: 38px;
+  text-align: left;
+  font-size: var(--font-size-31xl);
+  /* color: var(--medley-neutral); */
+  font-family: var(--font-racing-sans-one);
+}
+.rotateIcon {
+  animation: rotateAnimation 4s linear infinite; /* Adjust the duration and timing function as needed */
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
