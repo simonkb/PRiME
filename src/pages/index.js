@@ -4,6 +4,7 @@ import Card from "../components/card";
 import styles from "./index.module.css";
 import GameLevelCard from "../components/GameLevelCard";
 import Footer from "../components/footer";
+import AuthenticationView from "../components/loginSignup";
 const LandingPage = () => {
   return (
     <div className={styles.landingPage}>
@@ -36,7 +37,6 @@ const LandingPage = () => {
           />
         </div>
       </div>
-
       <div id="aboutUsSegment" className={styles.aboutUsContainer}>
         <div className={styles.mission}>
           <div className={styles.bar2} />
@@ -105,7 +105,7 @@ const LandingPage = () => {
             isLocked={true}
           ></GameLevelCard>
           <GameLevelCard
-            image="risk.png"
+            image="incident.png"
             title="Basic Risks"
             description="This is a basic risks level"
             points={2000}
@@ -122,12 +122,13 @@ const LandingPage = () => {
           ></GameLevelCard>
         </div>
       </div>
-      {/* FooterSegment */}
-
-      <div className={styles.footer}>
+      <div id="authentication" className={styles.authentication}>
+        <AuthenticationView />
+      </div>
+      <footer className={styles.footer}>
         <div className={styles.footerTopBar} />
         <Footer></Footer>
-      </div>
+      </footer>
     </div>
   );
 };

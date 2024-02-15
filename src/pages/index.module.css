@@ -1,12 +1,14 @@
 .landingPage {
   background-color: #1c1c28;
   color: var(--medley-neutral);
-  font-family: var(--font-ropa-sans);
+  /* font-family: var(--font-ropa-sans); */
+  font-family: Arial, Helvetica, sans-serif;
   font-size: var(--font-size-sm);
-  height: 3400px;
+  height: 4400px;
   overflow: hidden;
   text-align: center;
   width: 100%;
+  flex-direction: row;
 }
 .appName {
   flex-direction: row;
@@ -95,7 +97,6 @@
 }
 .missionStatement {
   width: 100%;
-  /* position: relative; */
   font-size: var(--font-size-13xl);
   line-height: 40px;
   text-align: center;
@@ -121,7 +122,7 @@
   width: 100%;
   overflow:scroll;
   justify-content: center;
-  padding-inline: 40px;
+  margin-inline: 25px;
 }
 .aboutUsContainer {
   position: relative;
@@ -132,11 +133,16 @@
 }
 .footer {
   position: absolute;
-  top: 2950px;
+  top: 3950px;
   width: 100%;
 }
 .footerTopBar {
   background-color: var(--medley-primary-200);
   width: 100%;
   height: 10px;
+}
+.authentication{
+  position: absolute;
+  top: 3100px;
+  width: 100%
 }

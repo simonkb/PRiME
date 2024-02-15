@@ -1,0 +1,76 @@
+
+.gradientForm {
+    /* Your gradient background styles go here */
+    /* background: var(--medley-neutral); */
+    /* background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); */
+    padding: 100px;
+  }
+  
+  .container {
+    /* Adjust container styles as needed */
+  }
+  
+  .formContainer {
+    /* Additional styling for the form container */
+
+  }
+  
+  .card {
+    /* Card styling */
+    border: none;
+    box-shadow: 0 0 20px rgba(54, 19, 144, 0.495);
+    background: linear-gradient(to right, #000000, #2c1b78, #420d7b, #8639c5);
+
+  }
+  
+  .infoContainer {
+    /* Information container styling */
+  }
+  
+  .moreThanCompany {
+    /* Additional styling for the information section */
+    background-color: #343a40;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .formOutline {
+    /* Styles for form outlines */
+  }
+  
+  .formControl {
+    /* Styles for form controls */
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .formLabel {
+    /* Styles for form labels */
+    color: white;
+  }
+  
+  .createButtonContainer {
+    /* Additional styling for the create button container */
+  }
+  
+  .dontHaveAccount {
+    /* Styles for the "Don't have an account?" text */
+    color: #0059ff;
+  }
+  
+  .createButton {
+    /* Styles for the create button */
+    background-color: hsl(354, 70%, 54%);
+    border: none;
+    color: white;
+  }
+  
+  .alreadyHaveAccount {
+    /* Styles for the "Already have an account?" text */
+    color: #0059ff;
+    
+  }
+  .gradientCustom2{
+    margin-right: 10px;
+  }
