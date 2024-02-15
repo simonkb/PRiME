@@ -19,7 +19,21 @@ const GameLevelCard = ({
         <p className={styles.points}>Points: {points}</p>
         <p className={styles.difficulty}>Difficulty: {difficulty}</p>
       </div>
-      <button className={styles.playButton} disabled={isLocked}>
+      <button
+        className={styles.playButton}
+        disabled={isLocked}
+        onClick={() => {
+          alert("Please login or sign up");
+          const targetElement = document.getElementById("authentication");
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest",
+            });
+          }
+        }}
+      >
         {isLocked ? (
           <>
             <span className={styles.lockIcon}>&#x1F512;</span> Locked
