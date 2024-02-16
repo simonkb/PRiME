@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .main {
+    flex: 1;
+    position: relative;
+    margin: 20px;
+    color: white;
+  }
+  
+ 
