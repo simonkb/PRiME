@@ -5,6 +5,7 @@ import styles from "./index.module.css";
 import GameLevelCard from "../components/GameLevelCard";
 import Footer from "../components/footer";
 import AuthenticationView from "../components/loginSignup";
+
 const LandingPage = () => {
   return (
     <div className={styles.landingPage}>
@@ -125,10 +126,9 @@ const LandingPage = () => {
       <div id="authentication" className={styles.authentication}>
         <AuthenticationView />
       </div>
-      <footer className={styles.footer}>
-        <div className={styles.footerTopBar} />
+      {/* <footer className={styles.footer}> */}
         <Footer></Footer>
-      </footer>
+      {/* </footer> */}
     </div>
   );
 };

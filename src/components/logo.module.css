@@ -6,6 +6,7 @@
 .prime {
   position: absolute;
   display: inline-block;
+  color: white;
 }
 .logo {
   height: 38px;

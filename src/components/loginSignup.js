@@ -1,11 +1,16 @@
 import { useState } from "react";
 import styles from "./loginSignup.module.css";
+import { useRouter } from "next/router";
 
 const LoginSignup = () => {
   const [isLoginActive, setLoginActive] = useState(true);
 
   const toggleView = () => {
     setLoginActive((prev) => !prev);
+  };
+  const router = useRouter();
+  const loginPressed = () => {
+    router.push("/home");
   };
 
   return (
@@ -57,6 +62,9 @@ const LoginSignup = () => {
                       <button
                         className={`btn btn-primary btn-block fa-lg ${styles.gradientCustom2} mb-3`}
                         type="button"
+                        onClick={() => {
+                          loginPressed();
+                        }}
                       >
                         Log in
                       </button>
@@ -159,7 +167,8 @@ const LoginSignup = () => {
             >
               <h4 className="mb-4">We are more than just a game</h4>
               <p className="small mb-0">
-                We are providing diverse solution to cybersecurity knowledge gap and its consequences in the sustainability of businesses. 
+                We are providing diverse solution to cybersecurity knowledge gap
+                and its consequences in the sustainability of businesses.
               </p>
             </div>
           </div>
