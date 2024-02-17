@@ -6,10 +6,11 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-  
     border-top-width: 10px;
     border-top-color: rgb(71, 0, 137);
     border-top-style: solid;  
+    z-index: 1000;
+    position: relative;
   }
   
   .promotion {

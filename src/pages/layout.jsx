@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 import styles2 from "./layout.module.css";
 const Layout = ({ children }) => {
   return (
-    <div className={styles2.wrapper}>
+    <div>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
           <Logo />
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
           </div>
         </nav>
       </header>
-      <main className={styles2.main}>{children}</main>
+      <main className={styles2.wrapper}>{children}</main>
       <Footer></Footer>
     </div>
   );

@@ -1,4 +1,3 @@
-
 import { useMemo, useState, useEffect } from "react";
 import styles from "./home_background.module.css";
 
@@ -7,7 +6,7 @@ const HomeBackground = ({
   top,
   left,
   images,
-  transitionDuration = 2000,
+  transitionDuration = 4000,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -30,11 +29,16 @@ const HomeBackground = ({
   return (
     <div className={styles.frame} style={frameStyle}>
       <div className={styles.overlay} />
-      <img
-        className={styles.backgroundIcon}
-        alt=""
-        src={images[currentImageIndex]}
-      />
+      {images.map((image, index) => (
+        <img
+          key={index}
+          className={`${styles.backgroundIcon} ${
+            index === currentImageIndex ? styles.visible : styles.hidden
+          }`}
+          alt=""
+          src={image}
+        />
+      ))}
     </div>
   );
 };
