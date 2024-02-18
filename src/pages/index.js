@@ -21,13 +21,13 @@ const LandingPage = () => {
   };
   return (
     <div>
-      <div className={styles.landingPage}>
-        <Header />
-        <HomeBackground
-          top="0"
-          left="0"
-          images={["/background-1@2x.png", "/346520-1@2x.png", "/cta@2x.png"]}
-        />
+      <Header />
+      <HomeBackground
+        position={"relative"}
+        top="0"
+        left="0"
+        images={["/background-1@2x.png", "/346520-1@2x.png", "/cta@2x.png"]}
+      >
         <div id="homeSegment">
           <div className={styles.homeText}>
             <div className={styles.appName}>
@@ -47,16 +47,18 @@ const LandingPage = () => {
             >
               Get Started!
             </div>
-          </div>
-          <div className={styles.scrollDownContainer}>
-            <div className={styles.scrollText}>Scroll down</div>
-            <img
-              className={styles.downWardArrow}
-              alt=""
-              src="/iconnavigationarrow-downward-24px.svg"
-            />
+            <div className={styles.scrollDownContainer}>
+              <div className={styles.scrollText}>Scroll down</div>
+              <img
+                className={styles.downWardArrow}
+                alt=""
+                src="/iconnavigationarrow-downward-24px.svg"
+              />
+            </div>
           </div>
         </div>
+      </HomeBackground>
+      <div className={`container {styles.landingPage}`}>
         <div id="aboutUsSegment" className={styles.aboutUsContainer}>
           <div className={styles.mission}>
             <div className={styles.bar2} />
@@ -149,7 +151,7 @@ const LandingPage = () => {
           <AuthenticationView />
         </div>
       </div>
-        <Footer></Footer>
+      <Footer></Footer>
     </div>
   );
 };

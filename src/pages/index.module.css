@@ -4,7 +4,6 @@
   /* font-family: var(--font-ropa-sans); */
   font-family: Arial, Helvetica, sans-serif;
   font-size: var(--font-size-sm);
-  height: 4400px;
   overflow: hidden;
   text-align: center;
   width: 100%;
@@ -47,7 +46,6 @@
   position: relative;
   top: 150px;
   align-items: center;
-  /* transform: translateX(-50%); */
   display: flex;
   flex-direction: column;
   gap: var(--gap-29xl);
@@ -72,7 +70,7 @@
 }
 .scrollDownContainer {
   position: relative;
-  top: 400px;
+  top: 200px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -107,34 +105,28 @@
 }
 .levels{
   position: relative;
-  top: 1200px;
-  padding: 100px;
 }
 .levelsContainer{
-  max-height: 1080px;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 16px;
-  padding: 16px;
   overflow:scroll;
 }
 .cardContainer{
-  display: inline-flex;
+  display: grid;
   width: 100%;
   overflow:scroll;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   justify-content: center;
   margin-inline: 25px;
 }
 .aboutUsContainer {
   position: relative;
-  top: 1031px;
   margin-inline: 40px;
-  max-height: 1080;
   padding-top: 180px;
 }
 .authentication{
-  position: absolute;
-  top: 3100px;
+  position: relative;
   width: 100%
 }
