@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .emailListContainer {
+    flex: 1;
+    min-width: fit-content;
+  }
+  
+  .emailList {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .email {
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .email:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .selected {
+    background-color: #cce5ff;
+  }
+  
+  .emailDetailsContainer {
+    flex: 2;
+  }
+  
+  .emailDetails {
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  
+  .emailHeader {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .sender {
+    color: #007bff;
+  }
+  
+  .subject {
+    flex-grow: 1;
+    text-align: right;
+  }
+  
+  .emailContent {
+    margin-top: 20px;
+  }
+  
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  .placeholderText {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    margin-top: 50px;
+  }
+  

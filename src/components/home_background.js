@@ -7,6 +7,7 @@ const HomeBackground = ({
   left,
   images,
   transitionDuration = 4000,
+  children,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -39,6 +40,9 @@ const HomeBackground = ({
           src={image}
         />
       ))}
+      <div>
+        {children}
+      </div>
     </div>
   );
 };

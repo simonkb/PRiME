@@ -13,13 +13,26 @@ const Levels = () => {
       <div className="container" style={{ color: "white" }}>
         <h1>Levels and Categories</h1>
         <div className={`container ${styles.levelsContainer}`}>
+        <GameLevelCard
+            image="phishing.jpeg"
+            title="The Phishing Menace"
+            description={
+              `In this challenge, you will face a flood of emails. Some are harmless, while others contain phishing attempts. The goal is to actively make decisions to identify and avoid clicking on malicious links while considering the your company's cybersecurity policies.`
+            }
+            points={2000}
+            difficulty="easy"
+            isLocked={false}
+            onClick={() => {
+              goTolevel("levels/the-phishing-menace");
+            }}
+          ></GameLevelCard>
           <GameLevelCard
             image="policy.jpeg"
             title="Basic Policy"
             description="This is a basic policy level"
             points={2000}
             difficulty="easy"
-            isLocked={false}
+            isLocked={true}
             onClick={() => {
               goTolevel("levels/basic-policy");
             }}

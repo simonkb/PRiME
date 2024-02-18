@@ -30,6 +30,9 @@
   
   .description {
     margin-bottom: 12px;
+    text-align: justify;
+    font-style: oblique;
+    color: lightsteelblue;
   }
   
   .points,
