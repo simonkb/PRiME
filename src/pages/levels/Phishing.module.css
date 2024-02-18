@@ -1,87 +1,110 @@
 .container {
-    display: flex;
-    gap: 20px;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .emailListContainer {
-    flex: 1;
-    min-width: fit-content;
-  }
-  
-  .emailList {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .email {
-    border: 1px solid #ddd;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .email:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .selected {
-    background-color: #cce5ff;
-  }
-  
-  .emailDetailsContainer {
-    flex: 2;
-  }
-  
-  .emailDetails {
-    border: 1px solid #ddd;
-    padding: 20px;
-  }
-  
-  .emailHeader {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-  }
-  
-  .sender {
-    color: #007bff;
-  }
-  
-  .subject {
-    flex-grow: 1;
-    text-align: right;
-  }
-  
-  .emailContent {
-    margin-top: 20px;
-  }
-  
-  .actions {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .button {
-    cursor: pointer;
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  .placeholderText {
-    text-align: center;
-    color: #777;
-    font-style: italic;
-    margin-top: 50px;
-  }
-  
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  padding-inline: 40px;
+}
+
+.emailListContainer {
+  flex: 1;
+  min-width: fit-content;
+}
+
+.emailList {
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+  border: 1px solid #e3e3e3;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.email:hover {
+  background-color: #f4f4f4;
+}
+
+.selected {
+  background-color: #0078d4;
+  color: #fff;
+}
+
+.emailDetailsContainer {
+  flex: 2;
+}
+
+.emailDetails {
+  border: 1px solid #e3e3e3;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.emailHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 10px;
+}
+
+.sender {
+  color: #0078d4;
+}
+.subject2{
+  color: #333;
+  padding-block: 5px;
+  border-bottom-width: 0.3px;
+  border-bottom: solid;
+}
+.subject {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.emailContent {
+  margin-top: 20px;
+  color: #333;
+}
+
+.actions {
+  margin-top: 100px;
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #005a9e;
+}
+
+.placeholderText {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 50px;
+}
+.sender {
+  color: #333;
+}
+.sender1{
+  color: #b2b2b2;
+}
+
+.emailContent {
+  margin-top: 20px;
+  color: #333;
+  white-space: pre-wrap; /* Preserve line breaks in the email body */
+}
