@@ -4,17 +4,16 @@ import styles from "./footer.module.css";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      
-      <div className={styles.promotion}>
-        <p>80% off on your first three months subscription</p>
-      </div>
+      {/* <div className={styles.promotion}> */}
+        {/* <p>PRiME: privacy Risk Indident Managment Education</p> */}
+      {/* </div> */}
       <div className={styles.columns}>
         <div className={styles.column}>
           <h3>Services</h3>
           <ul>
-            <li>Service 1</li>
-            <li>Service 2</li>
-            <li>Service 3</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Location</li>
           </ul>
         </div>
         <div className={styles.column}>
@@ -34,17 +33,13 @@ const Footer = () => {
             <li>Talk to our virtual assistant</li>
           </ul>
         </div>
-      </div>
-      <div className={styles.footerLinks}>
-        <p>Terms & Conditions</p>
-        <p>Privacy Policy</p>
-      </div>
+      </div> 
       <div className={styles.socialMedia}>
-        <p>Follow us on:</p>
+        <h1>Follow us on :  </h1>
         <ul>
-          <li>Facebook</li>
-          <li>Twitter</li>
-          <li>Instagram</li>
+        <li><img src="/face3logo.png" alt="Facebook Icon" width={40} height={40} /></li>
+        <li><img src="/Xlogo.png" alt="X Icon" width={40} height={40} /></li>
+        <li><img src="/instalogo.png" alt="Instagram Icon" width={40} height={40} /></li>
           {/* Add more social media links as needed */}
         </ul>
       </div>
