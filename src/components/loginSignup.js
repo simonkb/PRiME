@@ -16,7 +16,6 @@ const LoginSignup = () => {
   return (
     <section className={styles.gradientForm}>
       <h1>
-        <h1>  </h1>
         <i>Join us now!</i>
       </h1>
       <div className={`container py-5 h-100 ${styles.container}`}>

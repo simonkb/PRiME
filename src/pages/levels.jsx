@@ -29,10 +29,10 @@ const Levels = () => {
           <GameLevelCard
             image="policy.jpeg"
             title="Basic Policy"
-            description="This is a basic policy level"
+            description="In this level, you're thrust into the role of a digital policy analyst for a burgeoning tech company. As the digital landscape evolves, so too does the complexity of maintaining privacy and security. Your challenge? To navigate through a maze of policy decisions, each more intricate than the last."
             points={2000}
             difficulty="easy"
-            isLocked={true}
+            isLocked={false}
             onClick={() => {
               goTolevel("levels/basic-policy");
             }}

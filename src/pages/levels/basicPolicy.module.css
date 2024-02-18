@@ -1,0 +1,52 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .intro-message, .question-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .start-button, .answer-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0; /* Ensure vertical spacing */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: block; /* Block-level for vertical layout */
+    width: calc(100% - 40px); /* Full width within container, accounting for padding */
+    text-align: center; /* Center text for a uniform look */
+  }
+  
+  .scenario-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .scenario-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
