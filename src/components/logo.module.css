@@ -1,18 +1,15 @@
 .vectorIcon {
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
+ height: 38px;
+ width: 40px;
+ margin-bottom: 13px;
 }
 .prime {
-  position: absolute;
   display: inline-block;
   color: white;
 }
 .logo {
-  height: 38px;
-  text-align: left;
   font-size: var(--font-size-31xl);
-  /* color: var(--medley-neutral); */
+  flex-direction: row;
   font-family: var(--font-racing-sans-one);
 }
 .rotateIcon {

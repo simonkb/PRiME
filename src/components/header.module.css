@@ -26,6 +26,7 @@
 .menuItem {
   cursor: pointer;
   color: white;
+  text-decoration: none;
 }
 
 .searchBar {
