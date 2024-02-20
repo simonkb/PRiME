@@ -7,85 +7,117 @@ const Phishing = () => {
   const [emails, setEmails] = useState([
     {
       id: 1,
-      sender: "John Doe",
+      sender: "John Doe <john.doe@example.com>",
+      senderEmailAddress: "john.doe@example.com",
       subject: "Important Announcement",
-      content:
-        "Dear User, please click the link below for an important announcement.",
+      heading: "Urgent Notice Regarding Your Account",
+      body: "Dear User, \n\nWe regret to inform you that there is an urgent matter regarding your account that requires your immediate attention. Our system detected suspicious activity, and we need you to verify your account details. Click the link below to access your account and resolve this matter promptly:\n",
       link: "https://example.com/important-announcement",
+      closing:
+        "\n\nFailure to verify your account may result in temporary suspension. Thank you for your cooperation. \n\nSincerely, \nJohn Doe",
       attachment: "report.pdf",
     },
     {
       id: 2,
-      sender: "Jane Smith",
+      sender: "Jane Smith <jane.smith@example.com>",
+      senderEmailAddress: "jane.smith@example.com",
       subject: "Invoice Payment",
-      content:
-        "Hello, your recent invoice is ready for payment. Please find the attached invoice.",
+      heading: "Invoice Payment Due - Immediate Action Required",
+      body: "Hello,\n\nWe hope this message finds you well. Your recent invoice is now ready for payment. The total amount due is $250. If the payment is not received within the next 24 hours, a late fee of $50 will be applied. To ensure uninterrupted services, please make the payment at your earliest convenience.\n",
+      closing:
+        "\n\nThank you for your prompt attention to this matter. \n\nBest regards, \nJane Smith",
       attachment: "invoice.pdf",
     },
     {
       id: 3,
-      sender: "Customer Support",
+      sender: "Customer Support <support@example.com>",
+      senderEmailAddress: "support@example.com",
       subject: "Account Verification",
-      content:
-        "Dear User, we noticed some unusual activity on your account. Click the link to verify your account.",
+      heading: "Immediate Action Required: Verify Your Account",
+      body: "Dear User,\n\nOur security system has detected multiple login attempts from different locations. To secure your account, we require you to verify your identity. Please click on the link below to initiate the verification process:\n",
       link: "https://example.com/verify-account",
+      closing:
+        "\n\nThank you for your cooperation in maintaining a secure environment for all our users. \n\nBest Regards, \nCustomer Support",
     },
     {
       id: 4,
-      sender: "Bank XYZ",
+      sender: "Bank XYZ <security@bankxyz.com>",
+      senderEmailAddress: "security@bankxyz.com",
       subject: "Security Alert",
-      content:
-        "Your account security has been compromised. Click the link to secure your account.",
+      heading: "Urgent: Security Breach Detected",
+      body: "Dear Valued Customer,\n\nWe regret to inform you that our security system has detected unauthorized access to your account. To ensure the safety of your funds and personal information, we urge you to take immediate action. Click on the link below to review your recent transactions and secure your account:\n",
       link: "https://example.com/secure-account",
+      closing:
+        "\n\nYour prompt response is crucial in preventing any further unauthorized access. Thank you for your cooperation. \n\nSincerely, \nBank XYZ Security Team",
     },
     {
       id: 5,
-      sender: "Amazon",
+      sender: "Amazon <noreply@amazon.com>",
+      senderEmailAddress: "noreply@amazon.com",
       subject: "Order Confirmation",
-      content:
-        "Your recent order has been confirmed. If you didn't place this order, click the link to report.",
+      heading: "Your Amazon Order Confirmation",
+      body: "Dear Customer,\n\nWe're excited to confirm your recent order. If you did not place this order, please click the link below to report it immediately:\n",
       link: "https://example.com/report-order",
+      closing:
+        "\n\nThank you for choosing Amazon. We appreciate your business. \n\nBest regards, \nAmazon Customer Service",
     },
-    // Scam Emails
     {
       id: 6,
-      sender: "Prize Notification",
+      sender: "Prize Notification <prizes@winners.com>",
+      senderEmailAddress: "prizes@winners.com",
       subject: "You've Won a Prize!",
-      content:
-        "Congratulations! You've won a prize. To claim, provide your personal information.",
+      heading: "Congratulations! You're a Lucky Winner",
+      body: "Dear Winner,\n\nCongratulations! You have been selected as the lucky winner of our exclusive prize. To claim your prize, please provide your personal information by clicking on the link below:\n",
       link: "https://example.com/claim-prize",
+      closing:
+        "\n\nThis is a limited-time offer, and your immediate response is required. Thank you for participating. \n\nBest Wishes, \nPrize Notification Team",
     },
     {
       id: 7,
-      sender: "Lottery Winner",
+      sender: "Lottery Winner <claim@luckywin.com>",
+      senderEmailAddress: "claim@luckywin.com",
       subject: "You're the Lucky Winner!",
-      content:
-        "You've won a lottery. To receive your winnings, send a processing fee.",
+      heading: "Congratulations! You're Our Lottery Winner",
+      body: "Dear Lucky Winner,\n\nWe are thrilled to inform you that you have been chosen as the lucky winner of our grand lottery. To claim your winnings, please follow the instructions provided in the link below:\n",
+      link: "https://example.com/claim-lottery",
+      closing:
+        "\n\nThis is a once-in-a-lifetime opportunity, and your prompt response is highly recommended. Thank you for being part of our lottery. \n\nBest Regards, \nLottery Winner Team",
     },
     {
       id: 8,
-      sender: "Tech Support",
+      sender: "Tech Support <support@yourtech.com>",
+      senderEmailAddress: "support@yourtech.com",
       subject: "Virus Detected",
-      content:
-        "Your computer has a virus. Call this number to get immediate support.",
+      heading: "Urgent: Your Computer is Infected!",
+      body: "Dear User,\n\nOur system has detected a serious virus on your computer. Immediate action is required to prevent data loss and system damage. Please call our technical support team at the number provided below for immediate assistance:\n",
+      link: "tel:+123456789",
+      closing:
+        "\n\nIgnoring this alert may result in permanent data loss. We are here to help you resolve this issue. \n\nSincerely, \nTech Support Team",
     },
     {
       id: 9,
-      sender: "Pharmacy Discounts",
+      sender: "Pharmacy Discounts <offers@meddiscounts.com>",
+      senderEmailAddress: "offers@meddiscounts.com",
       subject: "Special Offer on Medications",
-      content:
-        "Get exclusive discounts on medications. Click the link to order.",
-      link: "https://example.com/order-meds",
+      heading: "Exclusive Pharmacy Discounts Await You",
+      body: "Dear Customer,\n\nUnlock exclusive discounts on a wide range of medications. Take advantage of this special offer by clicking the link below:\n",
+      link: "https://example.com/discounted-meds",
+      closing:
+        "\n\nThis offer is valid for a limited time only. Start saving on your medications today. \n\nBest Regards, \nPharmacy Discounts Team",
     },
     {
       id: 10,
-      sender: "IRS Alert",
+      sender: "IRS Alert <irs@taxauthority.com>",
+      senderEmailAddress: "irs@taxauthority.com",
       subject: "Tax Refund Pending",
-      content:
-        "Your tax refund is pending. Click the link to provide bank details for processing.",
-      link: "https://example.com/provide-details",
+      heading: "Important: Your Tax Refund is Pending",
+      body: "Dear Taxpayer,\n\nYour tax refund is pending approval. To expedite the process, please provide the necessary bank details by clicking on the link below:\n",
+      link: "https://example.com/provide-bank-details",
+      closing:
+        "\n\nFailure to provide the required information may delay your refund. We appreciate your cooperation. \n\nSincerely, \nIRS Alert Team",
     },
   ]);
+
   const [selectedEmail, setSelectedEmail] = useState(null);
 
   const handleEmailClick = (email) => {
@@ -116,92 +148,104 @@ const Phishing = () => {
 
   return (
     <Layout>
-      <div className={styles.container}>
-        <div className={styles.emailListContainer}>
-          <h1>Email Inbox</h1>
-          <div className={styles.emailList}>
-            {emails.map((email) => (
-              <div
-                key={email.id}
-                className={`${styles.email} ${
-                  selectedEmail?.id === email.id ? styles.selected : ""
-                }`}
-                onClick={() => handleEmailClick(email)}
-              >
-                <div className={styles.sender1}>{email.sender}</div>
-                <div className={styles.subject}>{email.subject}</div>
-              </div>
-            ))}
-          </div>
+      <div className={styles.containerOuter}>
+        <div className={styles.title} >
+          <h3>The Phishing Menace</h3>
         </div>
-        <div className={styles.emailDetailsContainer}>
-          {selectedEmail ? (
-            <div className={styles.emailDetails}>
-              <div className={styles.emailHeader}>
-                <div className={styles.sender}>
-                  {selectedEmail.sender} &lt;{"johne@example.com"}&gt;
+        <div className={styles.container}>
+          <div className={styles.emailListContainer}>
+            <h4>Inbox</h4>
+            <div className={styles.emailList}>
+              {emails.map((email) => (
+                <div
+                  key={email.id}
+                  className={`${styles.email} ${
+                    selectedEmail?.id === email.id ? styles.selected : ""
+                  }`}
+                  onClick={() => handleEmailClick(email)}
+                >
+                  <div className={styles.sender1}>{email.sender}</div>
+                  <div className={styles.subject}>{email.subject}</div>
                 </div>
-              </div>
-              <div className={styles.subject2}>
-                Subject: {selectedEmail.subject}
-              </div>
-              <div className={styles.emailContent}>{selectedEmail.content}</div>
-              <div className={styles.actions}>
-                <button
-                  className={styles.button}
-                  onClick={() =>
-                    handleActionClick("Report Spam", selectedEmail.id)
-                  }
-                >
-                  Report Spam
-                </button>
-                <button
-                  className={styles.button}
-                  onClick={() => handleActionClick("Reply", selectedEmail.id)}
-                >
-                  Reply
-                </button>
-                <button
-                  className={styles.button}
-                  onClick={() =>
-                    handleActionClick("Open Link", selectedEmail.id)
-                  }
-                >
-                  Open Link
-                </button>
+              ))}
+            </div>
+          </div>
+          <div className={styles.emailDetailsContainer}>
+            {selectedEmail ? (
+              <div className={styles.emailDetails}>
+                <div className={styles.emailHeader}>
+                  <div className={styles.sender}>{selectedEmail.sender}</div>
+                </div>
+                <div className={styles.subject2}>
+                  Subject: {selectedEmail.subject}
+                </div>
+                <div className={styles.emailContent}>{selectedEmail.body}</div>
+                {selectedEmail.link && (
+                  <a
+                    href="#"
+                    onClick={() =>
+                      handleActionClick("Link clicked", selectedEmail.id)
+                    }
+                  >
+                    Link
+                  </a>
+                )}
+                <div className={styles.emailContent}>
+                  {selectedEmail.closing}
+                </div>
+                <br></br>
                 {selectedEmail.attachment && (
-                  <button
-                    className={styles.button}
+                  <div
+                    className={styles.attachFileContainer}
                     onClick={() =>
                       handleActionClick("Download Attachment", selectedEmail.id)
                     }
                   >
-                    Download Attachment
-                  </button>
+                    <div className={styles.fileIcon}>📎</div>
+                    <div className={styles.fileName}>
+                      {selectedEmail.attachment}
+                    </div>
+                  </div>
                 )}
-                <button
-                  className={styles.button}
-                  onClick={() =>
-                    handleActionClick("Unsubscribe", selectedEmail.id)
-                  }
-                >
-                  Unsubscribe
-                </button>
-                <button
-                  className={styles.button}
-                  onClick={() =>
-                    handleActionClick("Report to Police", selectedEmail.id)
-                  }
-                >
-                  Report to Police
-                </button>
+                <div className={styles.actions}>
+                  <button
+                    className={styles.button}
+                    onClick={() =>
+                      handleActionClick("Report Spam", selectedEmail.id)
+                    }
+                  >
+                    Report Spam
+                  </button>
+                  <button
+                    className={styles.button}
+                    onClick={() => handleActionClick("Reply", selectedEmail.id)}
+                  >
+                    Reply
+                  </button>
+                  <button
+                    className={styles.button}
+                    onClick={() =>
+                      handleActionClick("Unsubscribe", selectedEmail.id)
+                    }
+                  >
+                    Unsubscribe
+                  </button>
+                  <button
+                    className={styles.button}
+                    onClick={() =>
+                      handleActionClick("Report to Police", selectedEmail.id)
+                    }
+                  >
+                    Report to Police
+                  </button>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className={styles.placeholderText}>
-              Select an email to view details and take actions.
-            </div>
-          )}
+            ) : (
+              <div className={styles.placeholderText}>
+                Select an email to view details and take actions.
+              </div>
+            )}
+          </div>
         </div>
         <VirtualAssistant ref={virtualAssistantRef} />
       </div>
