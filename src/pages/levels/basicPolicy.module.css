@@ -12,6 +12,7 @@
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
+  color: white; /* Assuming you want the text color to be white for better contrast */
 }
 .button {
   background-color: #007bff;
@@ -38,11 +39,7 @@
 .answers {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-    display: grid;
-    gap: 50px;
-    justify-items: start;
+  gap: 10px; /* Adjust the gap between buttons */
 }
 .policyText {
   padding: 20px;
@@ -65,7 +62,7 @@
 }
 
 .answers button {
-  margin: 10px 0;
+  margin: 10px ;
   width: auto;
   display: flex;
   flex-direction: column;

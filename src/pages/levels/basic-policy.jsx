@@ -4,6 +4,7 @@ import styles from './basicPolicy.module.css';
 import { useRouter } from 'next/router';
 
 
+
 const BasicPolicy = () => {
   const router = useRouter(); // Use the useRouter hook for navigation
   const [questions] = useState([
@@ -224,6 +225,7 @@ const BasicPolicy = () => {
   const [showPolicyQuestions, setShowPolicyQuestions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
+ 
   const handleAnswerSelect = (questionId, answerId, isCorrect) => {
     if (isCorrect) {
       setScore(prevScore => prevScore + 1);
@@ -267,11 +269,14 @@ const BasicPolicy = () => {
     router.push("/levels"); 
   };
 
+
   return (
+    
     <Layout>
       <div className={styles.container}>
         {showIntro && (
           <div className={styles.introMessage}>
+            <img src="/policy.jpeg" alt="Cybersecurity" style={{ maxWidth: '100%', borderRadius: '15px', margin: '0 auto 20px' }}/>
             <p>Embark on a journey through the realms of cybersecurity. Ready to test your knowledge and secure the digital frontier?</p>
             <button onClick={handleStartLevel} className={styles.button}>Begin Adventure</button>
           </div>

@@ -38,12 +38,15 @@ const Levels = () => {
             }}
           ></GameLevelCard>
           <GameLevelCard
-            image="risk.png"
-            title="Basic Risks"
-            description="This is a basic risks level"
+            image="The_Password_Enigma.webp"
+            title="The Password Enigma"
+            description="This is a password level"
             points={2000}
             difficulty="easy"
-            isLocked={true}
+            isLocked={false}
+            onClick={() => {
+              goTolevel("levels/passwordEnigma");
+            }}
           ></GameLevelCard>
           <GameLevelCard
             image="incident.png"
