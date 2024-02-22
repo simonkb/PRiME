@@ -3,6 +3,7 @@
     /* Your gradient background styles go here */
     /* background: var(--medley-neutral); */
     /* background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); */
+    margin-top: 200px;
     padding: 100px;
   }
   

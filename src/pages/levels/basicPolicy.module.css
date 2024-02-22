@@ -1,0 +1,103 @@
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+    padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+.introMessage {
+  background-color: #4b4b6d;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white; /* Assuming you want the text color to be white for better contrast */
+}
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  display: block;
+    width: calc(100% - 40px);
+    text-align: center;
+    text-decoration: none;
+  }
+.questionContainer {
+  text-align: center;
+}
+.scenarioImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjust the gap between buttons */
+}
+.policyText {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #442b2b; /* Light grey background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  line-height: 1.6; /* Improve readability */
+  font-size: 20px; /* Responsive font size */
+  width: auto; /* Adjust width as per content */
+  max-width: 100%; /* Limit max width to avoid overly wide paragraphs */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+  overflow: hidden; /* Hide overflow */
+  text-align:left;
+}
+
+
+.questionContainer {
+  margin-bottom: 20px;
+}
+
+.answers button {
+  margin: 10px ;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.policyQuestion {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2e8548;
+}
+
+.selected {
+  background-color: #37b81e;
+  color: #8b0e0e;
+}
+
+.infographicImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  }
