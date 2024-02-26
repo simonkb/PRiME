@@ -1,10 +1,13 @@
-
 .container {
   max-width: 800px;
   margin: 20px auto;
-    padding: 20px;
-  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .introMessage {
   background-color: #4b4b6d;
   border-radius: 30px;
@@ -12,92 +15,92 @@
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color: white; /* Assuming you want the text color to be white for better contrast */
+  color: white;
+    width: 100%;
 }
+
 .button {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
-  margin-top: 10px;
+  margin: 10px auto;
+    /* Center buttons vertically */
     border-radius: 10px;
     cursor: pointer;
-  display: block;
-    width: calc(100% - 40px);
-    text-align: center;
-    text-decoration: none;
-  }
-.questionContainer {
-  text-align: center;
-}
-.scenarioImage {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-.answers {
   display: flex;
-  flex-direction: column;
-  gap: 10px; /* Adjust the gap between buttons */
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    /* Uniform width */
+    text-align: center;
+  transition: background-color 0.3s ease;
+  }
+.button:hover {
+  background-color: #0056b3;
 }
+.selected {
+  background-color: #37b81e;
+}
+
+.questionContainer,
 .policyText {
-  padding: 20px;
-  margin: 20px auto;
-  background-color: #442b2b; /* Light grey background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  line-height: 1.6; /* Improve readability */
-  font-size: 20px; /* Responsive font size */
-  width: auto; /* Adjust width as per content */
-  max-width: 100%; /* Limit max width to avoid overly wide paragraphs */
-  word-wrap: break-word; /* Ensure long words do not overflow */
-  overflow: hidden; /* Hide overflow */
-  text-align:left;
+  text-align: center;
+  width: 100%;
 }
 
-
-.questionContainer {
-  margin-bottom: 20px;
-}
-
-.answers button {
-  margin: 10px ;
-  width: auto;
+.answers {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  gap: 10px;
 }
 
-
-.policyQuestion {
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-.button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #2e8548;
-}
-
-.selected {
-  background-color: #37b81e;
-  color: #8b0e0e;
-}
-
+.scenarioImage,
 .infographicImage {
   max-width: 100%;
-  height: auto;
+  border-radius: 8px;
+  margin: 20px auto;
   display: block;
-  margin: 0 auto;
+}
+
+.policyText {
+  background-color: #442b2b;
+  color: white;
+  border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-width: 100%;
   }
+  
+  .navArrowButton {
+    background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 32px;
+    /* Larger font size for visibility */
+    padding: 0 20px;
+    /* Reduce padding to just horizontal for edge positioning */
+    transition: color 0.2s;
+}
+
+.navArrowButton:hover {
+  color: #0056b3;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  /* Position arrows at the edges */
+  width: 100%;
+  /* Ensure full width to push buttons to edges */
+  margin-top: 20px;
+  /* Space above navigation buttons */
+}
