@@ -34,9 +34,9 @@ const Footer = () => {
         <div className={styles.column}>
           <h3>Help</h3>
           <ul>
-            <li onClick={() => handleNavigation("/faqs")}>FAQs</li>
+            <li onClick={() => handleNavigation("/virtual-assistant")}>FAQs</li>
             <li onClick={() => handleNavigation("/contact")}>Contact Us</li>
-            <li onClick={() => handleNavigation("/virtual-assistant")}>
+            <li onClick={() => handleNavigation("/faqs")}>
               Talk to our virtual assistant
             </li>
           </ul>
