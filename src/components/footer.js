@@ -16,27 +16,27 @@ const Footer = () => {
         <div className={styles.column}>
           <h3>Services</h3>
           <ul>
-            <li onClick={() => handleNavigation("/terms")}>
+            <li onClick={() => handleNavigation("/services")}>
               Terms & Conditions
             </li>
-            <li onClick={() => handleNavigation("/privacy")}>Privacy Policy</li>
-            <li onClick={() => handleNavigation("/location")}>Location</li>
+            <li onClick={() => handleNavigation("/services")}>Privacy Policy</li>
+            <li onClick={() => handleNavigation("/services")}>Location</li>
           </ul>
         </div>
         <div className={styles.column}>
           <h3>About Us</h3>
           <ul>
-            <li onClick={() => handleNavigation("/our-story")}>Our Story</li>
-            <li onClick={() => handleNavigation("/careers")}>Careers</li>
-            <li onClick={() => handleNavigation("/team")}>Team</li>
+            <li onClick={() => handleNavigation("/aboutUs")}>Our Story</li>
+            <li onClick={() => handleNavigation("/aboutUs")}>Careers</li>
+            <li onClick={() => handleNavigation("/aboutUs")}>Team</li>
           </ul>
         </div>
         <div className={styles.column}>
           <h3>Help</h3>
           <ul>
-            <li onClick={() => handleNavigation("/virtual-assistant")}>FAQs</li>
-            <li onClick={() => handleNavigation("/contact")}>Contact Us</li>
-            <li onClick={() => handleNavigation("/faqs")}>
+            <li onClick={() => handleNavigation("/help")}>FAQs</li>
+            <li onClick={() => handleNavigation("/help")}>Contact Us</li>
+            <li onClick={() => handleNavigation("/help")}>
               Talk to our virtual assistant
             </li>
           </ul>
