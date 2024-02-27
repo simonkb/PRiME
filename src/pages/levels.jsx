@@ -40,7 +40,7 @@ const Levels = () => {
           <GameLevelCard
             image="The_Password_Enigma.webp"
             title="The Password Enigma"
-            description="This is a password level"
+            description="Embark on a mission as a cybersecurity guardian for an emerging tech enterprise. This level challenges you to craft the fortress of the future: strong, impenetrable passwords. Your task is to weave through the labyrinth of password creation and management, applying advanced security principles to shield against the ever-present threats. Can you outsmart potential breaches and set a new standard for digital security?"
             points={2000}
             difficulty="easy"
             isLocked={false}
