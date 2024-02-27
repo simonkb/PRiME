@@ -1,46 +1,77 @@
 import React from "react";
+import { useRouter } from "next/router"; // Use useRouter for navigation
 import styles from "./footer.module.css";
 
 const Footer = () => {
+  const router = useRouter(); // Initialize useRouter
+
+  // Function to handle navigation
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
+
   return (
     <footer className={styles.footer}>
-      {/* <div className={styles.promotion}> */}
-        {/* <p>PRiME: privacy Risk Indident Managment Education</p> */}
-      {/* </div> */}
       <div className={styles.columns}>
         <div className={styles.column}>
           <h3>Services</h3>
           <ul>
-            <li>Terms & Conditions</li>
-            <li>Privacy Policy</li>
-            <li>Location</li>
+            <li onClick={() => handleNavigation("/terms")}>
+              Terms & Conditions
+            </li>
+            <li onClick={() => handleNavigation("/privacy")}>Privacy Policy</li>
+            <li onClick={() => handleNavigation("/location")}>Location</li>
           </ul>
         </div>
         <div className={styles.column}>
-          <h3>About us</h3>
+          <h3>About Us</h3>
           <ul>
-            <li>Our story</li>
-            <li>Careers</li>
-            <li>Team</li>
-            {/* Add more items as needed */}
+            <li onClick={() => handleNavigation("/our-story")}>Our Story</li>
+            <li onClick={() => handleNavigation("/careers")}>Careers</li>
+            <li onClick={() => handleNavigation("/team")}>Team</li>
           </ul>
         </div>
         <div className={styles.column}>
           <h3>Help</h3>
           <ul>
-            <li>FAQs</li>
-            <li>Contact Us</li>
-            <li>Talk to our virtual assistant</li>
+            <li onClick={() => handleNavigation("/faqs")}>FAQs</li>
+            <li onClick={() => handleNavigation("/contact")}>Contact Us</li>
+            <li onClick={() => handleNavigation("/virtual-assistant")}>
+              Talk to our virtual assistant
+            </li>
           </ul>
         </div>
-      </div> 
+      </div>
       <div className={styles.socialMedia}>
-        <h1>Follow us on :  </h1>
+        <h3>Follow Us On</h3>
         <ul>
-        <li><img src="/face3logo.png" alt="Facebook Icon" width={40} height={40} /></li>
-        <li><img src="/Xlogo.png" alt="X Icon" width={40} height={40} /></li>
-        <li><img src="/instalogo.png" alt="Instagram Icon" width={40} height={40} /></li>
-          {/* Add more social media links as needed */}
+          <li>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/face3logo.png" alt="Facebook" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/Xlogo.png" alt="Twitter" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/instalogo.png" alt="Instagram" />
+            </a>
+          </li>
         </ul>
       </div>
       <div className={styles.copyRight}>
