@@ -2,32 +2,40 @@
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5; /* Adjusted to match About Us background */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
   .profileHeader {
-    color: #333;
+    color: #333; /* Keeping text color consistent */
     text-align: center;
     margin-bottom: 30px;
+    font-size: 24px; /* Increased font size for emphasis */
   }
   
   .userInfo {
     font-size: 16px;
     line-height: 1.6;
-    color: #333;
+    color: #666; /* Softer text color for readability, matching About Us */
   }
   
   .userInfo p {
     margin: 10px 0;
+    background-color: #fff; /* White background for content sections */
+    padding: 10px;
+    border-radius: 5px; /* Slight rounding of corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Utilizing full container width */
+    max-width: 560px; /* Ensuring content does not stretch too wide */
+    border: 1px solid #ddd; /* Light border for definition */
   }
   
-  /* Example hover effect for any actionable items you might add */
+  /* Adjusting actionable items to fit the color scheme */
   .actionButton {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #1140ce; /* Standout color for buttons */
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -37,6 +45,6 @@
   }
   
   .actionButton:hover {
-    background-color: #0056b3;
+    background-color: #0a2e6b; /* Darker shade on hover */
   }
   

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'; // Import React
-import Layout from "./layout"; // Ensure correct path if needed
+import React, { useEffect, useState } from 'react';
+import Layout from "./layout";
 import styles from './profile.module.css';
 
 const Profile = () => {
@@ -11,32 +11,32 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate fetching user data
     setTimeout(() => {
-      // Mocked user data
       const mockUserData = {
         name: "Yousef",
         email: "Yousef@hotmail.com",
-        joinDate: "fed 1, 2024"
+        joinDate: "Feb 1, 2024"
       };
-
       setUserData(mockUserData);
-      setLoading(false); // Indicate loading is complete
-    }, 1000); // Simulate fetch delay
+      setLoading(false);
+    }, 1000);
   }, []);
 
   if (loading) {
     return <Layout>Loading...</Layout>;
   }
 
+  // Wrap the profile content with a div that sets the full page's background color
   return (
     <Layout>
-      <div className={styles.profileContainer}>
-        <h1 className={styles.profileHeader}>Your Profile</h1>
-        <div className={styles.userInfo}>
-          <p><strong>Name:</strong> {userData.name}</p>
-          <p><strong>Email:</strong> {userData.email}</p>
-          <p><strong>Join Date:</strong> {userData.joinDate}</p>
+      <div style={{ backgroundColor: '#f5f5f5', minHeight: '100vh' }}> {/* Inline style for full-page background */}
+        <div className={styles.profileContainer}>
+          <h1 className={styles.profileHeader}>Your Profile</h1>
+          <div className={styles.userInfo}>
+            <p><strong>Name:</strong> {userData.name}</p>
+            <p><strong>Email:</strong> {userData.email}</p>
+            <p><strong>Join Date:</strong> {userData.joinDate}</p>
+          </div>
         </div>
       </div>
     </Layout>
