@@ -1,7 +1,7 @@
 /* Adjusting for distinct color and alignment */
 .footer {
   color: #ffffff; /* General text color */
-  background-color: #48315f; /* Dark background for contrast, replace with your color variable */
+  background-color: var(--color-gray-300);
   padding: 20px 40px; /* Increased horizontal padding for alignment */
   display: flex;
   flex-direction: row;
