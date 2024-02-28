@@ -1,35 +1,58 @@
 /* help.module.css */
 .helpContainer {
-    padding: 50px;
-    background-color: #f5f5f5;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .heading {
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  .helpSection {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
-    border-radius: 10px;
-  }
-  
-  .helpSection h2 {
-    color: #1140ce;
-    margin-bottom: 10px;
-  }
-  
-  .helpSection p {
-    line-height: 1.6;
-    color: #666;
-  }
-  
+  padding: 50px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.helpSection {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.helpSection h2 {
+  color: #1140ce;
+  margin-bottom: 10px;
+}
+
+.helpSection p {
+  line-height: 1.6;
+  color: #666;
+}
+.faqItem {
+  margin-bottom: 15px;
+  color: #666;
+
+}
+
+.faqQuestion {
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+
+}
+
+.faqToggle {
+  float: right;
+  color: #666;
+
+}
+
+.faqAnswer {
+  padding-top: 10px;
+  color: #666;
+
+}
