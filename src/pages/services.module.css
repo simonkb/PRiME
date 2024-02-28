@@ -33,4 +33,32 @@
     line-height: 1.6; /* Line height for readability */
     color: #666; /* A softer color for text */
   }
+ 
+  /* Centering the map within its container */
+.mapContainer {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically, if needed */
+  width: 100%; /* Ensures the container takes the full width of its parent */
+  height: 450px; /* Adjust based on your preference or responsiveness */
+  margin: 20px 0; /* Adds some margin above and below the map container */
+}
+
+.mapContainer iframe {
+  max-width: 600px; /* Maximum width of the iframe */
+  width: 100%; /* Makes the iframe responsive */
+  height: 100%; /* Adjust height as needed, or use a fixed height */
+  border: none; /* Removes the default iframe border */
+  border-radius: 8px; /* Optional: adds rounded corners to the iframe */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for depth */
+}
+
+@media (max-width: 768px) {
+  .mapContainer {
+    height: auto; /* Allows the container's height to adjust based on the iframe */
+  }
   
+  .mapContainer iframe {
+    height: 300px; /* Adjust height for smaller devices */
+  }
+}
