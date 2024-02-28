@@ -23,10 +23,20 @@
   gap: var(--gap-21xl);
 }
 
-.menuItem {
+
+.menuItem  {
   cursor: pointer;
   color: white;
   text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.menuItem :hover {
+  color: #1140ce; 
+  transition: color 0.3s, transform 0.3s;
+  transform: translateY(-2px);
+
+
 }
 
 .searchBar {
