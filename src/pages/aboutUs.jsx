@@ -1,6 +1,6 @@
 // AboutUs.jsx
 import React from "react";
-import Layout from "./layout"; // Import the Layout component
+import Layout from "./layout"; 
 import styles from "./aboutUs.module.css";
 
 const AboutUs = () => {
