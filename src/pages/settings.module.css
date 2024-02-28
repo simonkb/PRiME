@@ -1,0 +1,71 @@
+.settingsContainer {
+    padding: 20px;
+    background-color: #f5f5f5; /* Neutral background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .settingsHeader {
+    color: #333;
+    margin: 30px 0; /* Adds more space around the heading for emphasis */
+    font-size: 2rem; /* Larger font size for the heading */
+  }
+  
+  .setting {
+    background-color: #fff; /* White background for each setting section */
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Use full container width */
+    max-width: 600px; /* Limiting max width for better readability */
+    border-radius: 10px;
+  }
+  
+  .setting label {
+    color: #1140ce; /* Standout color for labels */
+    font-weight: bold; /* Emphasize the label */
+    display: block; /* Ensure labels are on their own line */
+    margin-bottom: 10px; /* Space between label and input */
+  }
+  
+  .setting input[type="range"], 
+  .setting select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light border for definition */
+    border-radius: 5px;
+    margin-top: 5px; /* Space above for visual separation */
+    background-color: #ececec; /* Slightly off-white for inputs for contrast */
+    color: #333; /* Ensuring readability */
+  }
+  
+  /* Custom styles for the slider thumb */
+  .setting input[type="range"]::-webkit-slider-thumb {
+    background: #1140ce; /* Matching the standout color */
+    cursor: pointer;
+  }
+  
+  .setting input[type="range"]::-moz-range-thumb {
+    background: #1140ce; /* Consistency across browsers */
+  }
+  
+  /* Adjustments for select dropdown */
+  .setting select {
+    cursor: pointer;
+    -webkit-appearance: none; /* Remove default style */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg>...</svg>'); /* Optional: Add a custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  /* Responsive Design Adjustments */
+  @media (max-width: 768px) {
+    .setting {
+      width: 90%; /* Adjust for smaller screens */
+    }
+  }
+  
