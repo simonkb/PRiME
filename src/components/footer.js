@@ -4,10 +4,21 @@ import styles from "./footer.module.css";
 
 const Footer = () => {
   const router = useRouter(); // Initialize useRouter
-
+  const scrollToDiv = (targetDiv) => {
+    const targetElement = document.getElementById(targetDiv);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  };
   // Function to handle navigation
-  const handleNavigation = (path) => {
+  const handleNavigation = (path,id) => {
     router.push(path);
+    scrollToDiv(id);
+    
   };
 
   return (
@@ -34,10 +45,10 @@ const Footer = () => {
         <div className={styles.column}>
           <h3>Help</h3>
           <ul>
-            <li onClick={() => handleNavigation("/help")}>FAQs</li>
+            <li onClick={() => handleNavigation("/help","3")}>Talk to our virtual assistant</li>
             <li onClick={() => handleNavigation("/help")}>Contact Us</li>
             <li onClick={() => handleNavigation("/help")}>
-              Talk to our virtual assistant
+              FAQs
             </li>
           </ul>
         </div>

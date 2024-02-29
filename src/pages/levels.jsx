@@ -13,12 +13,10 @@ const Levels = () => {
       <div className="container" style={{ color: "white" }}>
         <h1>Levels and Categories</h1>
         <div className={`container ${styles.levelsContainer}`}>
-        <GameLevelCard
+          <GameLevelCard
             image="phishing.jpeg"
             title="The Phishing Menace"
-            description={
-              `In this challenge, you will face a flood of emails. Some are harmless, while others contain phishing attempts. The goal is to actively make decisions to identify and avoid clicking on malicious links while considering the your company's cybersecurity policies.`
-            }
+            description={`In this challenge, you will face a flood of emails. Some are harmless, while others contain phishing attempts. The goal is to actively make decisions to identify and avoid clicking on malicious links while considering the your company's cybersecurity policies.`}
             points={2000}
             difficulty="easy"
             isLocked={false}
@@ -58,11 +56,14 @@ const Levels = () => {
           ></GameLevelCard>
           <GameLevelCard
             image="risk.png"
-            title="Basic Risks"
+            title="Identifiy Basic Risks"
             description="This is a basic risks level"
             points={2000}
             difficulty="easy"
-            isLocked={true}
+            isLocked={false}
+            onClick={() => {
+              goTolevel("levels/basicRisk");
+            }}
           ></GameLevelCard>
         </div>
       </div>
