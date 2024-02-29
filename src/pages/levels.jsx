@@ -47,12 +47,15 @@ const Levels = () => {
             }}
           ></GameLevelCard>
           <GameLevelCard
-            image="incident.png"
-            title="Basic Risks"
-            description="This is a basic risks level"
+            image="malware.jpeg"
+            title="The Malware Invasion"
+            description="This level involves a dynamic challege of malwares and viruses affecting the user's computer and the user will lear how to avoid downloading suspicious files, mitigating risks and stick to company policy."
             points={2000}
             difficulty="easy"
             isLocked={true}
+            onClick={() => {
+              goTolevel("levels/the-malware-invasion");
+            }}
           ></GameLevelCard>
           <GameLevelCard
             image="risk.png"

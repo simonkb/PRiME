@@ -2,7 +2,6 @@ import VirtualAssistant from "../../components/virtualAssistant";
 import Layout from "../layout";
 import styles from "./Phishing.module.css";
 import { useState, useRef, useEffect } from "react";
-
 const Phishing = () => {
   const [emails, setEmails] = useState([
     {
@@ -16,6 +15,17 @@ const Phishing = () => {
       closing:
         "\n\nFailure to verify your account may result in temporary suspension. Thank you for your cooperation. \n\nSincerely, \nJohn Doe",
       attachment: "report.pdf",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 2,
@@ -27,6 +37,17 @@ const Phishing = () => {
       closing:
         "\n\nThank you for your prompt attention to this matter. \n\nBest regards, \nJane Smith",
       attachment: "invoice.pdf",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 3,
@@ -38,6 +59,17 @@ const Phishing = () => {
       link: "https://example.com/verify-account",
       closing:
         "\n\nThank you for your cooperation in maintaining a secure environment for all our users. \n\nBest Regards, \nCustomer Support",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 4,
@@ -49,6 +81,17 @@ const Phishing = () => {
       link: "https://example.com/secure-account",
       closing:
         "\n\nYour prompt response is crucial in preventing any further unauthorized access. Thank you for your cooperation. \n\nSincerely, \nBank XYZ Security Team",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 5,
@@ -60,6 +103,18 @@ const Phishing = () => {
       link: "https://example.com/report-order",
       closing:
         "\n\nThank you for choosing Amazon. We appreciate your business. \n\nBest regards, \nAmazon Customer Service",
+
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 6,
@@ -71,6 +126,18 @@ const Phishing = () => {
       link: "https://example.com/claim-prize",
       closing:
         "\n\nThis is a limited-time offer, and your immediate response is required. Thank you for participating. \n\nBest Wishes, \nPrize Notification Team",
+
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 7,
@@ -82,6 +149,17 @@ const Phishing = () => {
       link: "https://example.com/claim-lottery",
       closing:
         "\n\nThis is a once-in-a-lifetime opportunity, and your prompt response is highly recommended. Thank you for being part of our lottery. \n\nBest Regards, \nLottery Winner Team",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 8,
@@ -93,6 +171,17 @@ const Phishing = () => {
       link: "tel:+123456789",
       closing:
         "\n\nIgnoring this alert may result in permanent data loss. We are here to help you resolve this issue. \n\nSincerely, \nTech Support Team",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 9,
@@ -104,6 +193,17 @@ const Phishing = () => {
       link: "https://example.com/discounted-meds",
       closing:
         "\n\nThis offer is valid for a limited time only. Start saving on your medications today. \n\nBest Regards, \nPharmacy Discounts Team",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
     {
       id: 10,
@@ -115,23 +215,49 @@ const Phishing = () => {
       link: "https://example.com/provide-bank-details",
       closing:
         "\n\nFailure to provide the required information may delay your refund. We appreciate your cooperation. \n\nSincerely, \nIRS Alert Team",
+      pointsEarned: 0,
+      pointsPossible: 50,
+      actions: {
+        read: 5,
+        linkClick: -10,
+        downloadAttachment: -5,
+        reportSpam: 20,
+        reply: 0,
+        unsubscribe: 5,
+        reportToPolice: 20,
+      },
     },
   ]);
 
-  const [selectedEmail, setSelectedEmail] = useState(null);
+  const [selectedEmail, setSelectedEmail] = useState(emails[0]);
 
   const handleEmailClick = (email) => {
     setSelectedEmail(email);
+    const updatedEmails = [...emails];
+
+    updatedEmails[selectedEmail.id - 1].pointsEarned +=
+      updatedEmails[selectedEmail.id - 1].actions.read;
+    // Update state
+    setEmails(updatedEmails);
   };
 
   const handleActionClick = (action, emailId) => {
     // Handle the click actions here
+    const updatedEmails = [...emails];
+
+    // Update points
+    updatedEmails[selectedEmail.id - 1].pointsEarned +=
+      updatedEmails[selectedEmail.id - 1].actions[action];
+    // Update state
+    setEmails(updatedEmails);
+
     console.log(`Clicked ${action} for email with ID ${emailId}`);
     handleButtonClick(action + emailId + ". ");
   };
   const virtualAssistantRef = useRef();
 
   const handleButtonClick = (message) => {
+    //
     if (virtualAssistantRef.current) {
       virtualAssistantRef.current.showAssistant(
         message + "Well done. Now please proceed to the next email."
@@ -149,7 +275,7 @@ const Phishing = () => {
   return (
     <Layout>
       <div className={styles.containerOuter}>
-        <div className={styles.title} >
+        <div className={styles.title}>
           <h3>The Phishing Menace</h3>
         </div>
         <div className={styles.container}>
@@ -164,6 +290,9 @@ const Phishing = () => {
                   }`}
                   onClick={() => handleEmailClick(email)}
                 >
+                  <div className={styles.badge}>
+                    {`${email.pointsEarned} / ${email.pointsPossible}`}
+                  </div>
                   <div className={styles.sender1}>{email.sender}</div>
                   <div className={styles.subject}>{email.subject}</div>
                 </div>
@@ -184,7 +313,7 @@ const Phishing = () => {
                   <a
                     href="#"
                     onClick={() =>
-                      handleActionClick("Link clicked", selectedEmail.id)
+                      handleActionClick("linkClick", selectedEmail.id)
                     }
                   >
                     Link
@@ -198,7 +327,7 @@ const Phishing = () => {
                   <div
                     className={styles.attachFileContainer}
                     onClick={() =>
-                      handleActionClick("Download Attachment", selectedEmail.id)
+                      handleActionClick("downloadAttachment", selectedEmail.id)
                     }
                   >
                     <div className={styles.fileIcon}>📎</div>
@@ -211,21 +340,21 @@ const Phishing = () => {
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("Report Spam", selectedEmail.id)
+                      handleActionClick("reportSpam", selectedEmail.id)
                     }
                   >
                     Report Spam
                   </button>
                   <button
                     className={styles.button}
-                    onClick={() => handleActionClick("Reply", selectedEmail.id)}
+                    onClick={() => handleActionClick("reply", selectedEmail.id)}
                   >
                     Reply
                   </button>
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("Unsubscribe", selectedEmail.id)
+                      handleActionClick("unsubscribe", selectedEmail.id)
                     }
                   >
                     Unsubscribe
@@ -233,7 +362,7 @@ const Phishing = () => {
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("Report to Police", selectedEmail.id)
+                      handleActionClick("reportToPolice", selectedEmail.id)
                     }
                   >
                     Report to Police
