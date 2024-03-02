@@ -87,7 +87,7 @@ const Help = () => {
           <p> Email: 201950317@uaeu.ac.ae</p>
         </section>
 
-        <section
+        <section id="3"
           className={styles.helpSection}
           style={{ position: "relative" }}
         >
