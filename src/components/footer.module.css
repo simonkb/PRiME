@@ -1,5 +1,6 @@
 /* Adjusting for distinct color and alignment */
 .footer {
+  position: absolute;
   color: #ffffff; /* General text color */
   background-color: var(--color-gray-300);
   padding: 20px 40px; /* Increased horizontal padding for alignment */
@@ -12,8 +13,8 @@
 }
 
 .columns {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 4px; /* Increased gap for better separation and alignment */
   width: 100%; /* Full width to utilize space and align items */
@@ -23,10 +24,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align items to the start for uniform alignment */
-  padding:  5px; /* Padding for slight spacing, helps with alignment */
+  padding: 5px; /* Padding for slight spacing, helps with alignment */
   min-width: 150px;
   text-align: center;
-
 }
 
 .column h3 {
@@ -44,7 +44,8 @@
   width: 100%; /* Ensure list takes full width of the column for alignment */
 }
 
-.column ul li, .column ul li a {
+.column ul li,
+.column ul li a {
   cursor: pointer;
   color: #ffffff; /* Maintaining general text color for items */
   text-decoration: none;
@@ -53,12 +54,12 @@
   margin-left: -80px; /* Adjust according to your specific alignment needs */
 }
 
-.column ul li:hover, .column ul li a:hover {
+.column ul li:hover,
+.column ul li a:hover {
   color: #1140ce;
   list-style: none;
   transform: translateY(-2px);
   text-align: center;
-
 }
 
 .socialMedia {
@@ -74,7 +75,7 @@
 }
 
 .socialMedia ul {
-  list-style: none; 
+  list-style: none;
   display: flex;
   padding: 1px;
   margin: 10px;
@@ -97,12 +98,13 @@
 .socialMedia img:hover {
   transform: scale(1.5);
 }
-.footer, .column ul li a, .socialMedia a {
-  font-family: 'Arial', sans-serif;
+.footer,
+.column ul li a,
+.socialMedia a {
+  font-family: "Arial", sans-serif;
 }
 
-.column ul li a, .socialMedia a {
+.column ul li a,
+.socialMedia a {
   text-decoration: none;
 }
-
-
