@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../layout";
 import styles from "./basicPolicy.module.css";
 import { useRouter } from "next/router";
-
+import WithAuthProtection from "../../../config/withAuthProtection";
 const BasicPolicy = () => {
   const router = useRouter(); // Use the useRouter hook for navigation
   const [questions] = useState([
@@ -521,4 +521,4 @@ const BasicPolicy = () => {
   );
 };
 
-export default BasicPolicy;
+export default WithAuthProtection(BasicPolicy);

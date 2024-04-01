@@ -3,6 +3,8 @@ import Layout from "./layout";
 import GameLevelCard from "../components/GameLevelCard";
 import styles from "./levels.module.css";
 import { useRouter } from "next/router";
+import WithAuthProtection from "../../config/withAuthProtection";
+
 const Levels = () => {
   const router = useRouter();
   const goTolevel = (level) => {
@@ -74,4 +76,4 @@ const Levels = () => {
   );
 };
 
-export default Levels;
+export default WithAuthProtection(Levels);

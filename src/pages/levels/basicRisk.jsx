@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../layout"; // Update this import based on your project structure
 import styles from "./basicRisk.module.css"; // Ensure this CSS module exists and is correctly imported
+import WithAuthProtection from "../../../config/withAuthProtection";
 
 // Defining the quiz content directly within the component for simplicity
 const quizContent = {
@@ -205,4 +206,4 @@ const BasicRisk = () => {
   );
 };
 
-export default BasicRisk;
+export default WithAuthProtection(BasicRisk);

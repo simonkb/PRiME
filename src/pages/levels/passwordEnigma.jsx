@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../layout";
 import styles from "./passwordEnigma.module.css";
 import { useRouter } from "next/router";
+import WithAuthProtection from "../../../config/withAuthProtection";
 
 const PasswordEnigma = () => {
   const router = useRouter();
@@ -192,4 +193,4 @@ const PasswordEnigma = () => {
   );
 };
 
-export default PasswordEnigma;
+export default WithAuthProtection(PasswordEnigma);
