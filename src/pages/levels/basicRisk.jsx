@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Layout from "../layout"; // Update this import based on your project structure
-import styles from "./basicRisk.module.css"; // Ensure this CSS module exists and is correctly imported
+import Layout from "../layout"; 
+import styles from "./basicRisk.module.css"; 
 
-// Defining the quiz content directly within the component for simplicity
 const quizContent = {
   questionsAboutRisk: [
     {
