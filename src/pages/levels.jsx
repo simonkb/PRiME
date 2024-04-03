@@ -68,17 +68,6 @@ const Levels = () => {
               goTolevel("levels/basicRisk");
             }}
           ></GameLevelCard>
-          <GameLevelCard
-            image="risk.png"
-            title="new Basic Risks"
-            description="This is a basic risks level"
-            points={2000}
-            difficulty="easy"
-            isLocked={false}
-            onClick={() => {
-              goTolevel("levels/basicRisk");
-            }}
-          ></GameLevelCard>
         </div>
       </div>
     </Layout>
