@@ -1,85 +1,41 @@
+/* basicRisk.module.css */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  .answerButton {
-    background-color: #f5f5f5; /* Default background */
-    color: #333; /* Default text color */
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .answerButton:hover {
-    background-color: #007bff; /* Hover background color */
-    color: white; /* Hover text color */
-  }
-  
-  .selected {
-    background-color: #28a745; /* Selected background color for correct answer */
-    color: white;
-    cursor: default; /* To indicate selection */
-  }
-  .feedback {
-    margin-top: 20px;
-    color: #d9534f;
-  }
-  
-  .assetSelection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .assetImage {
-    width: 100px; /* Adjust based on your images */
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .scenarios {
-    list-style: inside square;
-  }
-  
-  .question, .feedback, .assetSelection, .scenarios {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .optionButton, .selectButton {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .optionButton:hover, .selectButton:hover {
-    background-color: #0056b3;
-  }
-  
-  .feedback {
-    color: #d9534f; /* Red for incorrect, can adjust for correct */
-  }
-  
-  .assetCard {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-  }
-  
-  .assetImage {
-    width: 100px; /* Adjust based on actual image sizes */
-    height: auto;
-    margin: 10px 0;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #7a6699;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: #333;
+}
+
+.interactiveImage {
+  width: 100%;
+  max-width: 600px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 15px;
+}
+
+.interactiveImage:hover {
+  transform: scale(1.02);
+}
+
+.feedback {
+  color: #28a745;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Add more styles as needed */
