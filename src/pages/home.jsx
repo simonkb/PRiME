@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "./layout";
 import HomeBackground from "../components/home_background";
+import WithAuthProtection from "../../config/withAuthProtection";
 const Home = () => {
   return (
     <Layout>
@@ -13,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default WithAuthProtection(Home);

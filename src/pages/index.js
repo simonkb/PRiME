@@ -4,11 +4,18 @@ import Card from "../components/card";
 import styles from "./index.module.css";
 import GameLevelCard from "../components/GameLevelCard";
 import Footer from "../components/footer";
-import AuthenticationView from "../components/loginSignup";
+import LoginSignup from "../components/loginSignup";
 import { useRouter } from "next/router";
-
+import { useEffect, useState } from "react";
+import { useAuth } from "../../config/firebaseConfig";
 const LandingPage = () => {
   const router = useRouter();
+  const { user, loading } = useAuth();
+  useEffect(() => {
+    if (user) {
+      router.push("/home");
+    }
+  }, [loading]);
   const scrollToDiv = (targetDiv) => {
     const targetElement = document.getElementById(targetDiv);
     if (targetElement) {
@@ -148,7 +155,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div id="authentication" className={styles.authentication}>
-          <AuthenticationView />
+          <LoginSignup />
         </div>
       </div>
       <Footer></Footer>

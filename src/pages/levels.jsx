@@ -3,6 +3,8 @@ import Layout from "./layout";
 import GameLevelCard from "../components/GameLevelCard";
 import styles from "./levels.module.css";
 import { useRouter } from "next/router";
+import WithAuthProtection from "../../config/withAuthProtection";
+
 const Levels = () => {
   const router = useRouter();
   const goTolevel = (level) => {
@@ -52,7 +54,7 @@ const Levels = () => {
             description="This level involves a dynamic challege of malwares and viruses affecting the user's computer and the user will lear how to avoid downloading suspicious files, mitigating risks and stick to company policy."
             points={2000}
             difficulty="easy"
-            isLocked={true}
+            isLocked={false}
             onClick={() => {
               goTolevel("levels/the-malware-invasion");
             }}
@@ -74,4 +76,4 @@ const Levels = () => {
   );
 };
 
-export default Levels;
+export default WithAuthProtection(Levels);

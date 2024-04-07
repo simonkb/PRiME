@@ -1,7 +1,9 @@
-import VirtualAssistant from "../../components/virtualAssistant";
+import VirtualAssistant from "../../components/VirtualAssistant";
 import Layout from "../layout";
 import styles from "./Phishing.module.css";
 import { useState, useRef, useEffect } from "react";
+import WithAuthProtection from "../../../config/withAuthProtection";
+
 const Phishing = () => {
   const [emails, setEmails] = useState([
     {
@@ -382,4 +384,4 @@ const Phishing = () => {
   );
 };
 
-export default Phishing;
+export default WithAuthProtection(Phishing);
