@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import Layout from "../layout";
-import styles from './basicRisk.module.css';
-=======
+
 import React, { useState } from "react";
-import Layout from "../layout"; // Update this import based on your project structure
-import styles from "./basicRisk.module.css"; // Ensure this CSS module exists and is correctly imported
+import Layout from "../layout";
+import styles from "./basicRisk.module.css"; 
 import WithAuthProtection from "../../../config/withAuthProtection";
->>>>>>> origin/Simon
 
 function BasicRisk() {
     const [stage, setStage] = useState(0);
