@@ -1,41 +1,54 @@
-/* basicRisk.module.css */
 .container {
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
   max-width: 800px;
   margin: auto;
-  background-color: #7a6699;
+  padding: 20px;
+  background-color: #f3f4f6;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  text-align: center;
   color: #333;
+  text-align: center;
 }
 
 .interactiveImage {
   width: 100%;
   max-width: 600px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  margin-bottom: 15px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
 }
 
-.interactiveImage:hover {
-  transform: scale(1.02);
+.content {
+  text-align: center;
 }
 
 .feedback {
-  color: #28a745;
-  font-size: 16px;
-  margin-top: 10px;
+  margin: 10px 0;
+  color: #d9534f;
 }
 
-.error {
-  color: #dc3545;
-  font-size: 16px;
-  margin-top: 10px;
+.choices {
+  margin: 15px 0;
 }
 
-/* Add more styles as needed */
+.choices button {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.choices button:hover {
+  background-color: #0056b3;
+}
+
+.congratulations {
+  text-align: center;
+  margin-top: 20px;
+}

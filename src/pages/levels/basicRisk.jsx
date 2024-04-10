@@ -1,84 +1,81 @@
-
 import React, { useState } from "react";
 import Layout from "../layout";
-import styles from "./basicRisk.module.css"; 
+import styles from "./basicRisk.module.css";
+import { useRouter } from "next/router";
 import WithAuthProtection from "../../../config/withAuthProtection";
 
 function BasicRisk() {
-    const [stage, setStage] = useState(0);
-    const [selectedRisk, setSelectedRisk] = useState('');
+    const [currentStage, setCurrentStage] = useState(0); // This will manage both scenario and stage
+    const router = useRouter();
 
     const scenarios = [
         {
-            image: '/risk.jpg',
-            risks: ['Unattended laptop', 'Personal Phone', 'folder'],
-            mitigationOptions: ['Mitigation 1', 'Mitigation 2', 'Mitigation 3']
+            image: "/risk.jpg",
+            correctRisk: "Unattended Laptop",
+            risks: ["Unattended Laptop", "Sticky Note with Password", "Open Email with Phishing Attempt"],
+            correctMitigation: "Lock the device",
+            mitigationOptions: ["Encrypt the data", "Lock the device", "Update the software"],
         },
         {
-            image: '/path/to/your/second/scenario/image.jpg',
-            risks: ['Risk A', 'Risk B', 'Risk C'],
-            mitigationOptions: ['Mitigation A', 'Mitigation B', 'Mitigation C']
+            image: "/risk2link.jpg",
+            correctRisk: "Clicking on a Suspicious Link",
+            risks: ["Clicking on a Suspicious Link", "Writing Down Passwords", "Unsecured Router"],
+            correctMitigation: "Avoid clicking unknown links",
+            mitigationOptions: ["Use strong passwords", "Avoid clicking unknown links", "Secure the network"],
         },
         {
-            image: '/path/to/your/third/scenario/image.jpg',
-            risks: ['Risk X', 'Risk Y', 'Risk Z'],
-            mitigationOptions: ['Mitigation X', 'Mitigation Y', 'Mitigation Z']
-        }
+            image: "/risk3phishing.jpg",
+            correctRisk: "Phishing Website",
+            risks: ["Phishing Website", "Scam SMS Notification", "Visible Sensitive Information"],
+            correctMitigation: "Close the phishing website",
+            mitigationOptions: ["Close the phishing website", "Ignore scam SMS", "Cover windows to block view"],
+        },
     ];
 
-    const currentScenario = scenarios[Math.floor(stage / 3)];
-    const currentStep = stage % 3;
+    const scenarioIndex = Math.floor(currentStage / 2);
+    const isMitigationStage = currentStage % 2 === 1;
+    const isGameCompleted = scenarioIndex >= scenarios.length;
+    const currentScenario = scenarios[scenarioIndex];
 
-    const handleRiskSelection = (risk) => {
-        setSelectedRisk(risk);
-        setStage(stage + 1);
+    const instruction = isMitigationStage ? 
+        "Select the correct action to mitigate the risk:" :
+        "Identify the risk in the image:";
+
+    const handleOptionSelection = (option) => {
+        const { correctRisk, correctMitigation } = currentScenario;
+        if ((isMitigationStage && option === correctMitigation) || (!isMitigationStage && option === correctRisk)) {
+            setCurrentStage(currentStage + 1);
+        } else {
+            alert("Your selection is incorrect. Please try again.");
+        }
     };
 
-    const handleMitigationSelection = (mitigation) => {
-        if (mitigation) {
-            setStage(stage + 1);
-        }
+    const handleReturnToLevels = () => {
+        router.push("/levels");
     };
 
     return (
         <Layout>
             <div className={styles.container}>
                 <h1 className={styles.title}>Cyber Awareness: Understanding Risks</h1>
-                {currentStep === 0 && (
-                    <div>
-                        <h2>Scenario {Math.floor(stage / 3) + 1}</h2>
-                        <img
-                            src={currentScenario.image}
-                            alt="Interactive Risk Scenario"
-                            className={styles.interactiveImage}
-                            onClick={() => setStage(stage + 1)}
-                        />
-                    </div>
-                )}
-                {currentStep === 1 && (
-                    <div>
-                        <h2>Identify the Risk</h2>
-                        {currentScenario.risks.map((risk, index) => (
-                            <button key={index} onClick={() => handleRiskSelection(risk)}>
-                                {risk}
-                            </button>
-                        ))}
-                    </div>
-                )}
-                {currentStep === 2 && (
-                    <div>
-                        <h2>Fix the Risk</h2>
-                        {currentScenario.mitigationOptions.map((mitigation, index) => (
-                            <button key={index} onClick={() => handleMitigationSelection(mitigation)}>
-                                {mitigation}
-                            </button>
-                        ))}
-                    </div>
-                )}
-                {stage >= scenarios.length * 3 && (
-                    <div>
+                
+                {!isGameCompleted ? (
+                    <>
+                        <img src={currentScenario.image} alt="Interactive Risk Scenario" className={styles.interactiveImage} />
+                        <p className={styles.feedback}>{instruction}</p>
+                        <div className={styles.options}>
+                            {(isMitigationStage ? currentScenario.mitigationOptions : currentScenario.risks).map((option, index) => (
+                                <button key={index} onClick={() => handleOptionSelection(option)} className={styles.optionButton}>
+                                    {option}
+                                </button>
+                            ))}
+                        </div>
+                    </>
+                ) : (
+                    <div className={styles.congratulations}>
                         <h2>Congratulations!</h2>
                         <p>You have completed the training.</p>
+                        <button onClick={handleReturnToLevels} className={styles.backButton}>Back to Levels</button>
                     </div>
                 )}
             </div>
