@@ -73,12 +73,12 @@ const Levels = () => {
           <GameLevelCard
             image="Ransomware.jpeg"
             title="Ransomware "
-            description="This level Ransomware "
-            points={2000}
-            difficulty="easy"
+            description="This level immerses users in a realistic ransomware attack scenario to teach the critical steps of identifying, containing, and mitigating such threats. Users will navigate through stages simulating a ransomware infiltration, learning to manage the crisis by disconnecting affected devices, identifying malware characteristics, and restoring systems safely.  "
+            points={1000}
+            difficulty="super easy"
             isLocked={false}
             onClick={() => {
-              goTolevel("levels/basicRisk");
+              goTolevel("levels/ransomware");
             }}
           ></GameLevelCard>
           <GameLevelCard
