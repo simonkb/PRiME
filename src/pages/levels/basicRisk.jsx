@@ -5,7 +5,8 @@ import { useRouter } from "next/router";
 import WithAuthProtection from "../../../config/withAuthProtection";
 
 function BasicRisk() {
-    const [currentStage, setCurrentStage] = useState(0); // This will manage both scenario and stage
+    const [currentStage, setCurrentStage] = useState(0); 
+    const [feedback, setFeedback] = useState("");
     const router = useRouter();
 
     const scenarios = [
@@ -32,21 +33,19 @@ function BasicRisk() {
         },
     ];
 
+    const totalStages = scenarios.length * 2;
     const scenarioIndex = Math.floor(currentStage / 2);
     const isMitigationStage = currentStage % 2 === 1;
-    const isGameCompleted = scenarioIndex >= scenarios.length;
+    const isGameCompleted = currentStage >= totalStages;
     const currentScenario = scenarios[scenarioIndex];
-
-    const instruction = isMitigationStage ? 
-        "Select the correct action to mitigate the risk:" :
-        "Identify the risk in the image:";
 
     const handleOptionSelection = (option) => {
         const { correctRisk, correctMitigation } = currentScenario;
         if ((isMitigationStage && option === correctMitigation) || (!isMitigationStage && option === correctRisk)) {
-            setCurrentStage(currentStage + 1);
+            setCurrentStage(currentStage + 1);  
+            setFeedback("");  
         } else {
-            alert("Your selection is incorrect. Please try again.");
+            setFeedback("Incorrect, please try again.");
         }
     };
 
@@ -62,7 +61,7 @@ function BasicRisk() {
                 {!isGameCompleted ? (
                     <>
                         <img src={currentScenario.image} alt="Interactive Risk Scenario" className={styles.interactiveImage} />
-                        <p className={styles.feedback}>{instruction}</p>
+                        <p className={styles.feedback}>{feedback || (isMitigationStage ? "Select the correct action to mitigate the risk:" : "Identify the risk in the image:")}</p>
                         <div className={styles.options}>
                             {(isMitigationStage ? currentScenario.mitigationOptions : currentScenario.risks).map((option, index) => (
                                 <button key={index} onClick={() => handleOptionSelection(option)} className={styles.optionButton}>
@@ -74,7 +73,7 @@ function BasicRisk() {
                 ) : (
                     <div className={styles.congratulations}>
                         <h2>Congratulations!</h2>
-                        <p>You have completed the training.</p>
+                        <p>You have completed this level.</p>
                         <button onClick={handleReturnToLevels} className={styles.backButton}>Back to Levels</button>
                     </div>
                 )}
