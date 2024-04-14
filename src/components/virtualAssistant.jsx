@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./virtualAssistant.module.css";
-
+import { ASSISTANT_ID, auth, openai } from "../../config/firebaseConfig";
 class VirtualAssistant extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +10,9 @@ class VirtualAssistant extends Component {
       isSpeaking: false,
       isInputVisible: false,
       userInput: "",
+      inputObject: null,
     };
+
     // Initialize SpeechSynthesisUtterance instance
     if (typeof window !== "undefined") {
       this.speechSynthesis = window.speechSynthesis;
@@ -60,16 +62,37 @@ class VirtualAssistant extends Component {
     });
   };
 
-  handleAskQuestion = () => {
-    const { userInput } = this.state;
-    // Process the user's question and show the assistant's response
-    // For now, just display it in the message container
-    this.showAssistant(`You asked: ${userInput}`);
+  handleAskQuestion = async () => {
+    if (this.state.userInput) {
+      const thread = await openai.beta.threads.create();
+      const message = await openai.beta.threads.messages.create(thread.id, {
+        role: "user",
+        content: this.state.userInput,
+      });
+      let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+        assistant_id: ASSISTANT_ID,
+      });
+      if (run.status === "completed") {
+        const messages = await openai.beta.threads.messages.list(run.thread_id);
+        for (const message of messages.data.reverse()) {
+          console.log(`${message.role} > ${message.content[0].text.value}`);
+          this.showAssistant(message.content[0].text.value);
+        }
+      } else {
+        this.showAssistant("Loading, please wait.");
+      }
+    }
   };
 
   render() {
-    const { isVisible, message, isSpeaking, isInputVisible, userInput } =
-      this.state;
+    const {
+      isVisible,
+      message,
+      isSpeaking,
+      isInputVisible,
+      userInput,
+      inputObject,
+    } = this.state;
 
     return (
       <div className={styles.virtualAssistant}>
@@ -85,7 +108,7 @@ class VirtualAssistant extends Component {
             <textarea
               value={userInput}
               onChange={this.handleInputChange}
-              placeholder="Ask a question..."
+              placeholder="Ask a question or respond..."
               className="form-control"
             />
             <button
@@ -94,6 +117,14 @@ class VirtualAssistant extends Component {
               style={{ width: "fit-content", marginTop: 10 }}
             >
               Submit
+            </button>
+            <button
+              className={styles.closeButton}
+              onClick={() => {
+                this.setState({ isInputVisible: false });
+              }}
+            >
+              x
             </button>
           </div>
         ) : (
@@ -113,6 +144,23 @@ class VirtualAssistant extends Component {
             </button>
           )}
         </div>
+        {isSpeaking && (
+          <div className={styles.inputContainer}>
+            <textarea
+              value={userInput}
+              onChange={this.handleInputChange}
+              placeholder="Ask a question or respond..."
+              className="form-control"
+            />
+            <button
+              onClick={this.handleAskQuestion}
+              className="btn btn-primary"
+              style={{ width: "fit-content", marginTop: 10 }}
+            >
+              Submit
+            </button>
+          </div>
+        )}
       </div>
     );
   }

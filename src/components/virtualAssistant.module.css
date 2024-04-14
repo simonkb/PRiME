@@ -36,14 +36,15 @@
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-20px); /* Bounce height */
+    transform: translateY(-20px);
   }
   60% {
-    transform: translateY(-10px); /* Bounce height */
+    transform: translateY(-10px);
   }
 }
 
 .messageContainer {
+  position: relative;
   max-width: 200px;
   padding: 10px;
   background-color: #fff;
@@ -76,4 +77,24 @@
 .floatingView {
   cursor: pointer;
   color: #007bff;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.chatContainer {
+  position: relative; 
+  width: 300px;
+}
+.message {
+  margin-bottom: 5px;
+}
+
+.loading {
+  text-align: center;
+  color: #007bff;
+  font-size: 14px;
+  padding: 10px;
 }
