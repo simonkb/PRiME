@@ -60,9 +60,9 @@ const Levels = () => {
             }}
           ></GameLevelCard>
           <GameLevelCard
-            image="risk.png"
+            image="OIG3.jpeg"
             title="Identifiy Basic Risks"
-            description="This is a basic risks level"
+            description="This level trains users to spot and mitigate common cybersecurity threats in the workplace, such as unattended laptops and phishing emails, enhancing their ability to safeguard sensitive information"
             points={2000}
             difficulty="easy"
             isLocked={false}
@@ -70,6 +70,18 @@ const Levels = () => {
               goTolevel("levels/basicRisk");
             }}
           ></GameLevelCard>
+          <GameLevelCard
+            image="Ransomware.jpeg"
+            title="Ransomware "
+            description="This level immerses users in a realistic ransomware attack scenario to teach the critical steps of identifying, containing, and mitigating such threats. Users will navigate through stages simulating a ransomware infiltration, learning to manage the crisis by disconnecting affected devices, identifying malware characteristics, and restoring systems safely.  "
+            points={1000}
+            difficulty="super easy"
+            isLocked={false}
+            onClick={() => {
+              goTolevel("levels/ransomware");
+            }}
+          ></GameLevelCard>
+          
         </div>
       </div>
     </Layout>

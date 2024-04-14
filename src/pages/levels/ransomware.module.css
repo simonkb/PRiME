@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #2a2d34;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.Image {
+  width: 100%; /* Adjust width as needed */
+  max-width: 800px;  /* Increases maximum width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensures it's block level for better control */
+  margin: 20px auto;  /* Centers the image and adds more space around it */
+  border-radius: 15px; /* Optional: adds rounded corners for a softer look */
+}
+.intro,
+.attackSimulation,
+.identification,
+.containment,
+.mitigation,
+.prevention,
+.recovery,
+.completion {
+  background-color: #36383e;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  width: 80%;
+  max-width: 600px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Fbutton {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.Fbutton:hover {
+  background-color: #783d3d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.h1 {
+  text-align: center;
+}
+.h2 {
+  text-align: center;
+}
+.p {
+  text-align: center;
+}
