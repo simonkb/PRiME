@@ -81,17 +81,7 @@ const Levels = () => {
               goTolevel("levels/ransomware");
             }}
           ></GameLevelCard>
-          <GameLevelCard
-            image="Digital.jpeg"
-            title="Digital CA"
-            description="This level CA"
-            points={2000}
-            difficulty="easy"
-            isLocked={false}
-            onClick={() => {
-              goTolevel("levels/basicRisk");
-            }}
-          ></GameLevelCard>
+          
         </div>
       </div>
     </Layout>
