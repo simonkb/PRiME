@@ -1,24 +1,12 @@
 import React from "react";
-import { useRouter } from "next/router"; // Use useRouter for navigation
+import { useRouter } from "next/router";
 import styles from "./footer.module.css";
 
 const Footer = () => {
-  const router = useRouter(); // Initialize useRouter
-  const scrollToDiv = (targetDiv) => {
-    const targetElement = document.getElementById(targetDiv);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
-    }
-  };
-  // Function to handle navigation
-  const handleNavigation = (path,id) => {
+  const router = useRouter();
+
+  const handleNavigation = (path) => {
     router.push(path);
-    scrollToDiv(id);
-    
   };
 
   return (
@@ -27,9 +15,7 @@ const Footer = () => {
         <div className={styles.column}>
           <h3>Services</h3>
           <ul>
-            <li onClick={() => handleNavigation("/services")}>
-              Terms & Conditions
-            </li>
+            <li onClick={() => handleNavigation("/services")}>Terms & Conditions</li>
             <li onClick={() => handleNavigation("/services")}>Privacy Policy</li>
             <li onClick={() => handleNavigation("/services")}>Location</li>
           </ul>
@@ -45,45 +31,22 @@ const Footer = () => {
         <div className={styles.column}>
           <h3>Help</h3>
           <ul>
-            <li onClick={() => handleNavigation("/help","3")}>Talk to our virtual assistant</li>
+            <li onClick={() => handleNavigation("/help")}>Customer Support</li>
             <li onClick={() => handleNavigation("/help")}>Contact Us</li>
-            <li onClick={() => handleNavigation("/help")}>
-              FAQs
-            </li>
+            <li onClick={() => handleNavigation("/help")}>FAQs</li>
           </ul>
         </div>
       </div>
       <div className={styles.socialMedia}>
-        <h3>Follow Us On</h3>
-        <ul>
-          <li>
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/face3logo.png" alt="Facebook" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/Xlogo.png" alt="Twitter" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/instalogo.png" alt="Instagram" />
-            </a>
-          </li>
-        </ul>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <img src="/face3logo.png" alt="Facebook" />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+        <img src="/Xlogo.png" alt="Twitter" />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <img src="/instalogo.png" alt="Instagram" />
+        </a>
       </div>
       <div className={styles.copyRight}>
         <p>&copy; 2024 PRiME L.L.C. All rights reserved.</p>

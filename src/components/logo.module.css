@@ -5,7 +5,7 @@
 }
 .prime {
   display: inline-block;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .logo {
   font-size: var(--font-size-31xl);
@@ -13,7 +13,7 @@
   font-family: var(--font-racing-sans-one);
 }
 .rotateIcon {
-  animation: rotateAnimation 4s linear infinite; /* Adjust the duration and timing function as needed */
+  animation: rotateAnimation 4s linear infinite; 
 }
 
 @keyframes rotateAnimation {

@@ -12,55 +12,31 @@ const Header = () => {
       });
     }
   };
+
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.logoContainer}>
         <Logo />
       </div>
-      <div className={styles.navigation}>
-        <div
-          className={styles.menuItem}
-          onClick={() => {
-            scrollToDiv("homeSegment");
-          }}
-        >
+      <nav className={styles.navigation}>
+        <button className={styles.menuItem} onClick={() => scrollToDiv("homeSegment")}>
           Home
-        </div>
-        <div
-          className={styles.menuItem}
-          onClick={() => {
-            scrollToDiv("levelsSegment");
-          }}
-        >
+        </button>
+        <button className={styles.menuItem} onClick={() => scrollToDiv("levelsSegment")}>
           Levels
-        </div>
-        <div
-          className={styles.menuItem}
-          onClick={() => {
-            scrollToDiv("aboutUsSegment");
-          }}
-        >
-          About
-        </div>
-        <div
-          className={styles.menuItem}
-          onClick={() => {
-            scrollToDiv("authentication");
-          }}
-        >
+        </button>
+        <button className={styles.menuItem} onClick={() => scrollToDiv("aboutUsSegment")}>
+          About Us
+        </button>
+        <button className={styles.menuItem} onClick={() => scrollToDiv("authentication")}>
           Sign In
-        </div>
+        </button>
         <div className={styles.searchBar}>
-          <img alt="" src="/group-2000.svg" />
-
-          <input
-            type="text"
-            placeholder="Search..."
-            className={styles.searchInput}
-          />
+          <img alt="Search" src="/group-2000.svg" className={styles.searchIcon} />
+          <input type="text" placeholder="Search..." className={styles.searchInput} />
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

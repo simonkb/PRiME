@@ -146,9 +146,7 @@ const LoginSignup = () => {
 
   return (
     <section className={styles.gradientForm}>
-      <h1>
-        <i>Join us now!</i>
-      </h1>
+     
       <div className={`container py-5 h-100 ${styles.container}`}>
         <div className="row h-100">
           <div className={`col-md-6 ${styles.formContainer}`}>
@@ -284,7 +282,9 @@ const LoginSignup = () => {
             <div
               className={`text-white px-3 py-4 p-md-5 mx-md-4 ${styles.moreThanCompany}`}
             >
+              <h3>Join us now!</h3>
               <h4 className="mb-4">We are more than just a game</h4>
+              
               <p className="small mb-0">
                 We are providing diverse solution to cybersecurity knowledge gap
                 and its consequences in the sustainability of businesses.
