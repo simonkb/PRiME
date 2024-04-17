@@ -53,14 +53,13 @@ const Profile = () => {
               type="button"
               className={`btn btn-outline-danger`}
               onClick={() => {
+                route.replace("/");
                 signOut(auth)
                   .then(() => {
                     // Sign-out successful.
-                    route.replace("/");
                   })
                   .catch((error) => {
                     // An error happened.
-                    route.replace("/");
                   });
               }}
             >

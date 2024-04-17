@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { auth } from "../../config/firebaseConfig";
+import { auth, db } from "../../config/firebaseConfig";
 import styles from "./loginSignup.module.css";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
 } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+
 const LoginSignup = () => {
   const [isLoginActive, setLoginActive] = useState(true);
   const [email, setEmail] = useState("");
@@ -90,7 +92,16 @@ const LoginSignup = () => {
 
     try {
       // Sign up with email and password
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      await setDoc(doc(db, "Users", user?.uid), {
+        email: email,
+      });
+
       router.push("/home");
     } catch (error) {
       // Handle different error scenarios

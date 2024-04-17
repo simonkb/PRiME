@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./virtualAssistant.module.css";
-
+import { ASSISTANT_ID, auth, openai } from "../../config/firebaseConfig";
 class VirtualAssistant extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +10,11 @@ class VirtualAssistant extends Component {
       isSpeaking: false,
       isInputVisible: false,
       userInput: "",
+      inputObject: null,
+      thread: null,
+      currentContent: null,
     };
+
     // Initialize SpeechSynthesisUtterance instance
     if (typeof window !== "undefined") {
       this.speechSynthesis = window.speechSynthesis;
@@ -59,17 +63,104 @@ class VirtualAssistant extends Component {
       userInput: e.target.value,
     });
   };
-
-  handleAskQuestion = () => {
-    const { userInput } = this.state;
-    // Process the user's question and show the assistant's response
-    // For now, just display it in the message container
-    this.showAssistant(`You asked: ${userInput}`);
+  handleWelcomeMessage = async ({ level }) => {
+    const thread = await openai.beta.threads.create();
+    this.setState({ thread: thread });
+    const message = await openai.beta.threads.messages.create(thread.id, {
+      role: "user",
+      content: level,
+    });
+    let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+      assistant_id: ASSISTANT_ID,
+    });
+    if (run.status === "completed") {
+      const messages = await openai.beta.threads.messages.list(run.thread_id);
+      for (const message of messages.data.reverse()) {
+        this.showAssistant(message.content[0].text.value);
+      }
+    } else {
+      this.showAssistant("Loading, please wait.");
+    }
+  };
+  handleAction = async ({ level }) => {
+    const thread = await openai.beta.threads.create();
+    this.setState({ thread: thread });
+    const message = await openai.beta.threads.messages.create(thread.id, {
+      role: "user",
+      content: level,
+    });
+    let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+      assistant_id: ASSISTANT_ID,
+    });
+    if (run.status === "completed") {
+      const messages = await openai.beta.threads.messages.list(run.thread_id);
+      for (const message of messages.data.reverse()) {
+        this.showAssistant(message.content[0].text.value);
+      }
+    } else {
+      this.showAssistant("Loading, please wait.");
+    }
+  };
+  setCurrentContent = ({ curr }) => {
+    console.log("current content", curr);
+    this.setState({
+      currentContent: curr,
+    });
   };
 
+  handleAskQuestion = async () => {
+    if (this.state.userInput && this.state.currentContent) {
+      const thread = this.state.thread;
+      const message = await openai.beta.threads.messages.create(thread.id, {
+        role: "user",
+        content: `This is the content: ${this.state.currentContent}`,
+      });
+      let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+        assistant_id: ASSISTANT_ID,
+      });
+      if (run.status === "completed") {
+       const messages = await openai.beta.threads.messages.list(run.thread_id);
+        for (const message of messages.data.reverse()) {
+          this.showAssistant(message.content[0].text.value);
+        }
+      } else {
+        this.showAssistant("Loading, please wait.");
+      }
+    } else {
+      console.log("No current content provided");
+    }
+  };
+  handleAction = async ({ actionOb }) => {
+    if (this.state.userInput && actionOb) {
+      const thread = this.state.thread;
+      const message = await openai.beta.threads.messages.create(thread.id, {
+        role: "user",
+        content: actionOb,
+      });
+      let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+        assistant_id: ASSISTANT_ID,
+      });
+      if (run.status === "completed") {
+        const messages = await openai.beta.threads.messages.list(run.thread_id);
+        for (const message of messages.data.reverse()) {
+          this.showAssistant(message.content[0].text.value);
+        }
+      } else {
+        this.showAssistant("Loading, please wait.");
+      }
+    } else {
+      console.log("No action obj");
+    }
+  };
   render() {
-    const { isVisible, message, isSpeaking, isInputVisible, userInput } =
-      this.state;
+    const {
+      isVisible,
+      message,
+      isSpeaking,
+      isInputVisible,
+      userInput,
+      inputObject,
+    } = this.state;
 
     return (
       <div className={styles.virtualAssistant}>
@@ -85,7 +176,7 @@ class VirtualAssistant extends Component {
             <textarea
               value={userInput}
               onChange={this.handleInputChange}
-              placeholder="Ask a question..."
+              placeholder="Ask a question or respond..."
               className="form-control"
             />
             <button
@@ -94,6 +185,14 @@ class VirtualAssistant extends Component {
               style={{ width: "fit-content", marginTop: 10 }}
             >
               Submit
+            </button>
+            <button
+              className={styles.closeButton}
+              onClick={() => {
+                this.setState({ isInputVisible: false });
+              }}
+            >
+              x
             </button>
           </div>
         ) : (
@@ -113,6 +212,23 @@ class VirtualAssistant extends Component {
             </button>
           )}
         </div>
+        {isSpeaking && (
+          <div className={styles.inputContainer}>
+            <textarea
+              value={userInput}
+              onChange={this.handleInputChange}
+              placeholder="Ask a question or respond..."
+              className="form-control"
+            />
+            <button
+              onClick={this.handleAskQuestion}
+              className="btn btn-primary"
+              style={{ width: "fit-content", marginTop: 10 }}
+            >
+              Submit
+            </button>
+          </div>
+        )}
       </div>
     );
   }

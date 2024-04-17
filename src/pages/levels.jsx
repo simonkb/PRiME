@@ -51,7 +51,7 @@ const Levels = () => {
           <GameLevelCard
             image="malware.jpeg"
             title="The Malware Invasion"
-            description="This level involves a dynamic challege of malwares and viruses affecting the user's computer and the user will lear how to avoid downloading suspicious files, mitigating risks and stick to company policy."
+            description="This level involves a dynamic challenge of malware and viruses affecting the user's computer and the user will learn how to avoid downloading suspicious files, mitigating risks and stick to company policy."
             points={2000}
             difficulty="easy"
             isLocked={false}
