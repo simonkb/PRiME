@@ -11,6 +11,8 @@ class VirtualAssistant extends Component {
       isInputVisible: false,
       userInput: "",
       inputObject: null,
+      thread: null,
+      currentContent: null,
     };
 
     // Initialize SpeechSynthesisUtterance instance
@@ -61,13 +63,79 @@ class VirtualAssistant extends Component {
       userInput: e.target.value,
     });
   };
+  handleWelcomeMessage = async ({ level }) => {
+    const thread = await openai.beta.threads.create();
+    this.setState({ thread: thread });
+    const message = await openai.beta.threads.messages.create(thread.id, {
+      role: "user",
+      content: level,
+    });
+    let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+      assistant_id: ASSISTANT_ID,
+    });
+    if (run.status === "completed") {
+      const messages = await openai.beta.threads.messages.list(run.thread_id);
+      for (const message of messages.data.reverse()) {
+        this.showAssistant(message.content[0].text.value);
+      }
+    } else {
+      this.showAssistant("Loading, please wait.");
+    }
+  };
+  handleAction = async ({ level }) => {
+    const thread = await openai.beta.threads.create();
+    this.setState({ thread: thread });
+    const message = await openai.beta.threads.messages.create(thread.id, {
+      role: "user",
+      content: level,
+    });
+    let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+      assistant_id: ASSISTANT_ID,
+    });
+    if (run.status === "completed") {
+      const messages = await openai.beta.threads.messages.list(run.thread_id);
+      for (const message of messages.data.reverse()) {
+        this.showAssistant(message.content[0].text.value);
+      }
+    } else {
+      this.showAssistant("Loading, please wait.");
+    }
+  };
+  setCurrentContent = ({ curr }) => {
+    console.log("current content", curr);
+    this.setState({
+      currentContent: curr,
+    });
+  };
 
   handleAskQuestion = async () => {
-    if (this.state.userInput) {
-      const thread = await openai.beta.threads.create();
+    if (this.state.userInput && this.state.currentContent) {
+      const thread = this.state.thread;
       const message = await openai.beta.threads.messages.create(thread.id, {
         role: "user",
-        content: this.state.userInput,
+        content: `This is the content: ${this.state.currentContent}`,
+      });
+      let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+        assistant_id: ASSISTANT_ID,
+      });
+      if (run.status === "completed") {
+       const messages = await openai.beta.threads.messages.list(run.thread_id);
+        for (const message of messages.data.reverse()) {
+          this.showAssistant(message.content[0].text.value);
+        }
+      } else {
+        this.showAssistant("Loading, please wait.");
+      }
+    } else {
+      console.log("No current content provided");
+    }
+  };
+  handleAction = async ({ actionOb }) => {
+    if (this.state.userInput && actionOb) {
+      const thread = this.state.thread;
+      const message = await openai.beta.threads.messages.create(thread.id, {
+        role: "user",
+        content: actionOb,
       });
       let run = await openai.beta.threads.runs.createAndPoll(thread.id, {
         assistant_id: ASSISTANT_ID,
@@ -75,15 +143,15 @@ class VirtualAssistant extends Component {
       if (run.status === "completed") {
         const messages = await openai.beta.threads.messages.list(run.thread_id);
         for (const message of messages.data.reverse()) {
-          console.log(`${message.role} > ${message.content[0].text.value}`);
           this.showAssistant(message.content[0].text.value);
         }
       } else {
         this.showAssistant("Loading, please wait.");
       }
+    } else {
+      console.log("No action obj");
     }
   };
-
   render() {
     const {
       isVisible,

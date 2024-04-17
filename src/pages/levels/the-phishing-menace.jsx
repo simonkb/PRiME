@@ -16,23 +16,28 @@ const Phishing = () => {
       setEmails(updatedEmails);
     }
   }, [selectedEmail]);
-  
+
   const handleEmailClick = (email) => {
     setSelectedEmail(email);
+    let ob = {
+      selectedEmail: email,
+      instraction:
+        "Based on the selected email object and its content answer the question provided in userinput",
+    };
+    virtualAssistantRef.current.setCurrentContent(ob);
   };
 
-  const handleActionClick = (action, emailId) => {
-    // Handle the click actions here
+  const handleActionClick = (action, email) => {
     const updatedEmails = [...emails];
-
-    // Update points
     updatedEmails[selectedEmail.id - 1].pointsEarned +=
       updatedEmails[selectedEmail.id - 1].actions[action];
-    // Update state
     setEmails(updatedEmails);
-
-    console.log(`Clicked ${action} for email with ID ${emailId}`);
-    handleButtonClick(action + emailId + ". ");
+    virtualAssistantRef.current.handleAction({
+      user: "Simon",
+      level: "The phishing menace",
+      content: email,
+      action: action,
+    });
   };
   const virtualAssistantRef = useRef();
 
@@ -46,9 +51,11 @@ const Phishing = () => {
   };
   useEffect(() => {
     if (virtualAssistantRef.current) {
-      virtualAssistantRef.current.showAssistant(
-        "Welcome to the phishing menace level. In this level, you are presented with multiple emails some of which are phishing emails and the rest are not. Your task is to take one or more of the possible actions for each email. Based on the goodness of your actions you will get important points and my feedbacks."
-      );
+      let ob = {
+        name: "Simon",
+        level: "Phishing menace level",
+      };
+      virtualAssistantRef.current.handleWelcomeMessage(ob);
     }
   }, []);
   useEffect(() => {
@@ -108,7 +115,7 @@ const Phishing = () => {
                   <a
                     href="#"
                     onClick={() =>
-                      handleActionClick("linkClick", selectedEmail.id)
+                      handleActionClick("link Click", selectedEmail)
                     }
                   >
                     Link
@@ -122,7 +129,7 @@ const Phishing = () => {
                   <div
                     className={styles.attachFileContainer}
                     onClick={() =>
-                      handleActionClick("downloadAttachment", selectedEmail.id)
+                      handleActionClick("download attachment", selectedEmail)
                     }
                   >
                     <div className={styles.fileIcon}>📎</div>
@@ -135,21 +142,21 @@ const Phishing = () => {
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("reportSpam", selectedEmail.id)
+                      handleActionClick("report Spam", selectedEmail)
                     }
                   >
                     Report Spam
                   </button>
                   <button
                     className={styles.button}
-                    onClick={() => handleActionClick("reply", selectedEmail.id)}
+                    onClick={() => handleActionClick("reply", selectedEmail)}
                   >
                     Reply
                   </button>
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("unsubscribe", selectedEmail.id)
+                      handleActionClick("unsubscribe", selectedEmail)
                     }
                   >
                     Unsubscribe
@@ -157,7 +164,7 @@ const Phishing = () => {
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("reportToPolice", selectedEmail.id)
+                      handleActionClick("report To Police", selectedEmail)
                     }
                   >
                     Report to Police
