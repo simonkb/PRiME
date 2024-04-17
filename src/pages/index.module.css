@@ -1,117 +1,15 @@
-/* index.module.css */
-
-/* Root level design customization */
-.container {
-  --primary-color: #0d6efd; /* A slightly different blue for variety */
-  --secondary-color: #6c757d; /* A soft gray for less intensive sections */
-  --background-main: #f8f9fa; /* A light background to distinguish from header/footer */
-  --text-color: #212529; /* Dark color for text for better readability */
-}
-
-/* General page settings */
 .landingPage {
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-  background-color: var(--background-main);
-  color: var(--text-color);
-  padding: 20px;
+  background-color: #1c1c28;
+  color: var(--medley-neutral);
+  /* font-family: var(--font-ropa-sans); */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-sm);
+  overflow: hidden;
   text-align: center;
-}
-
-/* Header section */
-.header {
-  background-color: #ffffff; /* Keeping the header standard white for clarity */
-  color: #212529;
-  padding: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle 3D effect */
-}
-
-/* Hero section with distinct styling */
-.heroSection {
-  padding: 40px 20px;
-  background-color: #e9ecef; /* A light grey that stands out from the main background */
-  color: var(--primary-color);
-  border-radius: 8px;
-  margin: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Section styling for clear separation */
-.section {
-  background-color: #fff;
-  padding: 30px;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.levels {
-  padding: 20px;
-  margin: 50px auto;
-  background-color: #798795; /* Adds contrast against the main background */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: calc(100% - 40px); /* Ensures padding doesn't cause overflow */
-}
-
-/* Container for game level cards */
-.levelsContainer {
-  display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  position: relative;
+  min-height: 100vh;
 }
-
-/* Individual game level card styling */
-.gameLevelCard {
-  flex: 1 1 280px; /* Flex-basis of 280px but allows shrinking and growing */
-  background-color: #f8f9fa;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gameLevelCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .levelsContainer {
-    flex-direction: column;
-    align-items: center; /* Centers cards on smaller screens */
-  }
-}
-
-/* Footer section to remain consistent yet slightly lighter than the header */
-.footer {
-  background-color: #f0f0f0;
-  color: #343a40;
-  padding: 20px 0;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Enhancements for buttons and interactive elements */
-.button,
-.ctaButton {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button:hover,
-.ctaButton:hover {
-  background-color: darken(var(--primary-color), 10%);
-}
-
 .appName {
   flex-direction: row;
   align-items: center;
@@ -132,10 +30,21 @@
   text-align: center;
   margin-top: var(--gap-base);
 }
-
+.getStartedButton {
+  border-radius: var(--br-81xl);
+  background: linear-gradient(267.28deg, #7b61ff, #aa82ff);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-base);
+  font-size: var(--font-size-base);
+  margin-top: var(--gap-29xl);
+  align-items: center;
+  justify-content: center;
+}
 .homeText {
   position: relative;
-  top: 180px;
+  top: 150px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -144,7 +53,6 @@
 }
 .scrollText {
   font-weight: 600;
-  padding: 20px;
   animation: bounce 1s infinite alternate;
 }
 @keyframes bounce {
@@ -158,7 +66,7 @@
 .downWardArrow {
   width: 16px;
   height: 24px;
-  animation: bounce 1s infinite alternate;
+  animation:bounce 1s infinite alternate;
 }
 .scrollDownContainer {
   position: relative;
@@ -172,7 +80,6 @@
   color: var(--medley-neutral);
   font-family: var(--font-open-sans);
 }
-
 .bar2 {
   width: 40px;
   position: relative;
@@ -195,25 +102,30 @@
   display: inline-block;
   margin-top: var(--gap-29xl);
 }
-
-.policyRiskContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: 50px auto;
-  background-color: #798795; /* Adds contrast against the main background */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: calc(100% - 40px); /* Ensures padding doesn't cause overflow */
+.levels{
+  position: relative;
 }
-
-.cardRow {
-  display: flex;
-  width: auto; /* Full width of the container */
-  justify-content: space-between; /* Space cards evenly */
-  border-radius: 10px;
+.levelsContainer{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 16px;
+  overflow:auto;
 }
-
-
-
+.cardContainer{
+  display: grid;
+  width: 100%;
+  overflow:scroll;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-content: center;
+  margin-inline: 25px;
+}
+.aboutUsContainer {
+  position: relative;
+  margin-inline: 40px;
+  padding-top: 180px;
+}
+.authentication{
+  position: relative;
+  width: 100%
+}
