@@ -1,15 +1,37 @@
 import React from "react";
 import Layout from "./layout";
-import HomeBackground from "../components/home_background";
+import styles from './home.module.css'; 
+import { useRouter } from "next/router";
 import WithAuthProtection from "../../config/withAuthProtection";
+
 const Home = () => {
+  const router = useRouter();
+  const goTolevel = (level) => {
+    router.push(level);
+  };
   return (
     <Layout>
-      <HomeBackground
-        top="0"
-        left="0"
-        images={["/background-1@2x.png", "/346520-1@2x.png", "/cta@2x.png"]}
-      />
+      <div className={styles.homeContainer} style={{ backgroundImage: `url('/homebackground4.webp')` }}>
+        <div className={styles.userProfileContainer}>
+          <img src="/Unknown_person.jpg" alt="User Avatar" className={styles.avatar} />
+          <div className={styles.userInfo}>
+          <h2 className={styles.username}>Yousef</h2>
+          <p className={styles.score}>Score: 2500</p>
+        </div>
+        </div>
+
+        <div className={styles.navigation}>
+          <button className={styles.navButton} onClick={() => {goTolevel("/levels")}}>
+            Play
+          </button>
+          <button className={styles.navButton} onClick={() => {goTolevel("/settings")}}>
+            Settings
+          </button>
+          <button className={styles.navButton} onClick={() => {goTolevel("/profile")}}>
+            Profile
+          </button>
+        </div>
+      </div>
     </Layout>
   );
 };
