@@ -1,69 +1,75 @@
 .homeContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-image: url('/homebackground4.webp'); /* Ensure the path is correct */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background */
-    background-size: cover; /* Cover the entire container without stretching */
-    height: 100vh;
-    padding: 2vh;
-  }
-  .userProfileContainer {
-    background-color: rgba(8, 15, 62, 0.8); /* Black background with 50% opacity */
-    padding: 20px;
-    border-radius: 54px; /* Rounded corners */
-    display: start;
-    align-items: center;
-    margin-bottom: 2vh; /* Responsive vertical spacing */
-    
-  }
-  .userInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2vh; /* Responsive vertical spacing */
-  }
-  
-  .avatar {
-    width: 10vw; /* Responsive width based on viewport width */
-    height: 10vw; /* Maintain aspect ratio */
-    border-radius: 50%; /* Fully rounded */
-    border: 2px solid wrgb(0, 0, 0) /* Visible border for the avatar */
-  }
-  
-  .username {
-    color: #ffffff;
-    font-size: 2.5vw; /* Responsive font size */
-    margin-top: 1vh; /* Responsive margin */
-  }
-  
-  .score {
-    color: #ffffff;
-    font-size: 2vw; /* Smaller font size than username */
-    margin-bottom: 1vh; /* Responsive margin */
-  }
-  
-  .navigation {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    gap: 1vw; /* Space between buttons */
-  }
-  
-  .navButton {
-    padding: 1.5vw 3vw; /* Responsive padding */
-    background-color: #2a205a;
-    color: white;
-    border: none;
-    border-radius: 1vw; /* Smooth rounded corners */
-    font-size: 1.8vw; /* Responsive font size */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .navButton:hover {
-    background-color: #367C2B;
-    transform: scale(1.1); /* Slightly enlarge on hover */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url("/homebackground4.webp"); /* Ensure the path is correct */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background */
+  background-size: cover; /* Cover the entire container without stretching */
+  height: 100vh;
+  padding: 2vh;
+}
+.userProfileContainer {
+  background-color: rgba(
+    8,
+    15,
+    62,
+    0.8
+  ); /* Black background with 50% opacity */
+  padding: 20px;
+  border-radius: 54px; /* Rounded corners */
+  display: start;
+  align-items: center;
+  margin-bottom: 0.2vh;
+  justify-content: center;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2vh; /* Responsive vertical spacing */
+}
+
+.avatar {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  border: 2px solid wrgb(0, 0, 0);
+  text-align: center;
+}
+
+.username {
+  color: #ffffff;
+  font-size: 2vw; /* Responsive font size */
+  margin-top: 1vh; /* Responsive margin */
+}
+
+.score {
+  color: #ffffff;
+  font-size: 2vw; /* Smaller font size than username */
+  margin-bottom: 1vh; /* Responsive margin */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 1vw; /* Space between buttons */
+}
+
+.navButton {
+  padding: 1.5vw 3vw; /* Responsive padding */
+  background-color: #2a205a;
+  color: white;
+  border: none;
+  border-radius: 1vw; /* Smooth rounded corners */
+  font-size: 1.8vw; /* Responsive font size */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.navButton:hover {
+  background-color: #367c2b;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
