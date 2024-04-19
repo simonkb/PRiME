@@ -1,4 +1,3 @@
-// import VirtualAssistant from "../../components/virtualAssistant";
 import Layout from "../layout";
 import styles from "./Phishing.module.css";
 import { useState, useRef, useEffect } from "react";
@@ -6,8 +5,10 @@ import WithAuthProtection from "../../../config/withAuthProtection";
 import { auth, db } from "../../../config/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import VirtualAssistant from "../../components/vAssistant";
+import { Howl } from "howler";
+import { CSSTransition } from "react-transition-group";
+import PointsDisplay from "../../components/pointsDisplay";
 const Phishing = () => {
-  // const virtualAssistantRef = useRef();
   const [emails, setEmails] = useState([]);
   const [selectedEmail, setSelectedEmail] = useState(emails[0]);
   const [content, setContent] = useState({
@@ -17,6 +18,29 @@ const Phishing = () => {
     userQuestion: "",
     userAction: "none",
   });
+  const [positiveSound, setPositiveSound] = useState(null);
+  const [negativeSound, setNegativeSound] = useState(null);
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [animationType, setAnimationType] = useState("");
+  const [pointsEarned, setPointsEarned] = useState(0);
+  const [pointsLost, setPointsLost] = useState(0);
+  useEffect(() => {
+    const positiveSound = new Howl({
+      src: ["/positive-sound.mp3"],
+    });
+    setPositiveSound(positiveSound);
+
+    const negativeSound = new Howl({
+      src: ["/negative-sound.mp3"],
+    });
+    setNegativeSound(negativeSound);
+
+    return () => {
+      positiveSound.unload();
+      negativeSound.unload();
+    };
+  }, []);
+
   useEffect(() => {
     if (selectedEmail) {
       const updatedEmails = [...emails];
@@ -28,44 +52,35 @@ const Phishing = () => {
 
   const handleEmailClick = (email) => {
     setSelectedEmail(email);
-    // let ob = {
-    //   selectedEmail: email,
-    //   instraction:
-    //     "Based on the selected email object and its content answer the question provided in userinput",
-    // };
-    // virtualAssistantRef.current.setCurrentContent(ob);
   };
-
   const handleActionClick = (action, email) => {
     const updatedEmails = [...emails];
-    updatedEmails[selectedEmail.id - 1].pointsEarned +=
-      updatedEmails[selectedEmail.id - 1].actions[action];
-    setEmails(updatedEmails);
-    // virtualAssistantRef.current.handleAction({
-    //   user: "Simon",
-    //   level: "The phishing menace",
-    //   content: email,
-    //   action: action,
-    // });
-  };
+    const emailIndex = selectedEmail.id - 1;
+    const pointChange = updatedEmails[emailIndex].actions[action];
 
-  const handleButtonClick = (message) => {
-    //
-    // if (virtualAssistantRef.current) {
-    //   virtualAssistantRef.current.showAssistant(
-    //     message + "Well done. Now please proceed to the next email."
-    //   );
-    // }
+    if (pointChange > 0) {
+      positiveSound.play();
+      setPointsEarned(pointChange);
+      setAnimationType("positive");
+    } else {
+      negativeSound.play();
+      setPointsLost(-pointChange);
+      setAnimationType("negative");
+    }
+
+    setShowAnimation(true);
+
+    updatedEmails[emailIndex].pointsEarned += pointChange;
+    setEmails(updatedEmails);
+
+    setTimeout(() => {
+      setShowAnimation(false);
+      setPointsEarned(0);
+      setPointsLost(0);
+    }, 1000);
   };
-  // useEffect(() => {
-  //   if (virtualAssistantRef.current) {
-  //     let ob = {
-  //       name: "Simon",
-  //       level: "Phishing menace level",
-  //     };
-  //     virtualAssistantRef.current.handleWelcomeMessage(ob);
-  //   }
-  // }, []);
+  const handleButtonClick = (message) => {};
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -88,6 +103,14 @@ const Phishing = () => {
         <div className={styles.title}>
           <h3>The Phishing Menace</h3>
         </div>
+        <PointsDisplay
+          points={emails.reduce(
+            (total, email) => total + email.pointsEarned,
+            0
+          )}
+        
+        />
+
         <div className={styles.container}>
           <div className={styles.emailListContainer}>
             <h4>Inbox</h4>
@@ -100,9 +123,43 @@ const Phishing = () => {
                   }`}
                   onClick={() => handleEmailClick(email)}
                 >
-                  <div className={styles.badge}>
-                    {`${email.pointsEarned} / ${email.pointsPossible}`}
-                  </div>
+                  <CSSTransition
+                    in={showAnimation && selectedEmail?.id === email.id}
+                    timeout={1000}
+                    classNames={{
+                      enter: styles[`badgeAnimation-enter-${animationType}`],
+                      enterActive:
+                        styles[`badgeAnimation-enter-active-${animationType}`],
+                      exit: styles[`badgeAnimation-exit-${animationType}`],
+                      exitActive:
+                        styles[`badgeAnimation-exit-active-${animationType}`],
+                    }}
+                    unmountOnExit
+                  >
+                    <div className={styles.badge}>
+                      {`${email.pointsEarned} / ${email.pointsPossible}`}
+                      {animationType === "positive" && (
+                        <div className={styles.animationContainer}>
+                          <span className={styles.animationIcon}>
+                            &#128513;
+                          </span>
+                          <span className={styles.animationPoints}>
+                            +{pointsEarned}
+                          </span>
+                        </div>
+                      )}
+                      {animationType === "negative" && (
+                        <div className={styles.animationContainer}>
+                          <span className={styles.animationIcon}>
+                            &#128546;
+                          </span>
+                          <span className={styles.animationPoints}>
+                            -{pointsLost}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </CSSTransition>
                   <div className={styles.sender1}>{email.sender}</div>
                   <div className={styles.subject}>{email.subject}</div>
                 </div>
@@ -123,7 +180,7 @@ const Phishing = () => {
                   <a
                     href="#"
                     onClick={() =>
-                      handleActionClick("link Click", selectedEmail)
+                      handleActionClick("linkClick", selectedEmail)
                     }
                   >
                     Link
@@ -137,7 +194,7 @@ const Phishing = () => {
                   <div
                     className={styles.attachFileContainer}
                     onClick={() =>
-                      handleActionClick("download attachment", selectedEmail)
+                      handleActionClick("downloadAttachment", selectedEmail)
                     }
                   >
                     <div className={styles.fileIcon}>📎</div>
@@ -150,7 +207,7 @@ const Phishing = () => {
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("report Spam", selectedEmail)
+                      handleActionClick("reportSpam", selectedEmail)
                     }
                   >
                     Report Spam
@@ -172,7 +229,7 @@ const Phishing = () => {
                   <button
                     className={styles.button}
                     onClick={() =>
-                      handleActionClick("report To Police", selectedEmail)
+                      handleActionClick("reportToPolice", selectedEmail)
                     }
                   >
                     Report to Police
@@ -186,7 +243,6 @@ const Phishing = () => {
             )}
           </div>
         </div>
-        {/* <VirtualAssistant ref={virtualAssistantRef} /> */}
         <VirtualAssistant content={content}></VirtualAssistant>
       </div>
     </Layout>

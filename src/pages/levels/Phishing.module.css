@@ -4,26 +4,24 @@
   padding: 20px;
   padding-inline: 40px;
 }
-.containerOuter{
+.containerOuter {
   background-color: #f4f1f1;
   color: black;
   min-height: 100vh;
   position: relative;
 }
-.title{
+.title {
   text-align: center;
   padding: 10px;
 }
 .emailListContainer {
   flex: 1;
-  
 }
 
 .emailList {
   display: flex;
   flex-direction: column;
   margin-right: 20px;
-
 }
 
 .email {
@@ -34,13 +32,11 @@
   padding-top: 0px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
 }
 
 .email:hover {
   background-color: #2e9ef4;
   color: #fff;
-
 }
 
 .selected {
@@ -51,7 +47,6 @@
 .emailDetailsContainer {
   flex: 2;
   padding-top: 35px;
-
 }
 
 .emailDetails {
@@ -59,7 +54,6 @@
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
-
 }
 
 .emailHeader {
@@ -73,11 +67,10 @@
 .sender {
   color: #0078d4;
 }
-.subject2{
+.subject2 {
   color: #333;
   padding-block: 5px;
   border-bottom: 1px solid #e3e3e3;
-
 }
 .subject {
   flex-grow: 1;
@@ -118,7 +111,7 @@
 .sender {
   color: #333;
 }
-.sender1{
+.sender1 {
   color: #3d3b3b;
 }
 
@@ -137,9 +130,8 @@
   border-radius: 4px;
   width: fit-content;
   cursor: pointer;
-
 }
-.attachFileContainer:hover{
+.attachFileContainer:hover {
   background-color: #a4a4a4;
 }
 
@@ -153,16 +145,6 @@
   text-overflow: ellipsis;
   color: #333;
 }
-/* .badge {
-  top: 10px;
-  right: 10px;
-  padding: 5px 8px;
-  background-color: #0078d4;
-  color: #fff;
-  border-radius: 4px;
-  font-size: 12px;
-  width: fit-content;
-} */
 .badge {
   position: relative;
   right: 5px;
@@ -173,5 +155,64 @@
   border-radius: 100px;
   font-size: 10px;
   width: fit-content;
-  
+}
+/* Positive Animation */
+.badgeAnimation-enter-positive {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.badgeAnimation-enter-active-positive {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.badgeAnimation-exit-positive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.badgeAnimation-exit-active-positive {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Negative Animation */
+.badgeAnimation-enter-negative {
+  opacity: 0;
+  transform: scale(1.5);
+}
+
+.badgeAnimation-enter-active-negative {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.badgeAnimation-exit-negative {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.badgeAnimation-exit-active-negative {
+  opacity: 0;
+  transform: scale(1.5);
+  transition: opacity 300ms, transform 300ms;
+}
+.animationContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.animationIcon {
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.animationPoints {
+  font-size: 14px;
+  font-weight: bold;
 }
