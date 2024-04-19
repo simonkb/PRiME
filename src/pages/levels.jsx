@@ -61,7 +61,7 @@ const Levels = () => {
           ></GameLevelCard>
           <GameLevelCard
             image="OIG3.jpeg"
-            title="Identifiy Basic Risks"
+            title="Identify Basic Risks"
             description="This level trains users to spot and mitigate common cybersecurity threats in the workplace, such as unattended laptops and phishing emails, enhancing their ability to safeguard sensitive information"
             points={2000}
             difficulty="easy"

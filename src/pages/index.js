@@ -118,9 +118,9 @@ const LandingPage = () => {
           <h1>Levels and Categories</h1>
           <div className={styles.levelsContainer}>
             <GameLevelCard
-              image="policy.jpeg"
-              title="Basic Policy"
-              description="This is a basic policy level"
+              image="phishing.jpeg"
+              title="The Phishing Menace"
+              description="In this challenge, you will face a flood of emails. Some are harmless, while others contain phishing attempts. The goal is to actively make decisions to identify and avoid clicking on malicious links while considering the your company's cybersecurity policies."
               points={2000}
               difficulty="easy"
               isLocked={false}
@@ -129,29 +129,49 @@ const LandingPage = () => {
               }}
             ></GameLevelCard>
             <GameLevelCard
-              image="risk.png"
-              title="Basic Risks"
-              description="This is a basic risks level"
+              image="policy.jpeg"
+              title="Basic Policy"
+              description="In this level, you're thrust into the role of a digital policy analyst for a burgeoning tech company. As the digital landscape evolves, so too does the complexity of maintaining privacy and security. Your challenge? To navigate through a maze of policy decisions, each more intricate than the last."
               points={2000}
               difficulty="easy"
               isLocked={true}
             ></GameLevelCard>
             <GameLevelCard
-              image="incident.png"
-              title="Basic Risks"
-              description="This is a basic risks level"
-              points={2000}
-              difficulty="easy"
-              isLocked={true}
-            ></GameLevelCard>
-            <GameLevelCard
-              image="risk.png"
-              title="Basic Risks"
-              description="This is a basic risks level"
-              points={2000}
-              difficulty="easy"
-              isLocked={true}
-            ></GameLevelCard>
+            image="The_Password_Enigma.webp"
+            title="The Password Enigma"
+            description="Embark on a mission as a cybersecurity guardian for an emerging tech enterprise. This level challenges you to craft the fortress of the future: strong, impenetrable passwords. Your task is to weave through the labyrinth of password creation and management, applying advanced security principles to shield against the ever-present threats. Can you outsmart potential breaches and set a new standard for digital security?"
+            points={2000}
+            difficulty="easy"
+            isLocked={true}
+            
+          ></GameLevelCard>
+          <GameLevelCard
+            image="malware.jpeg"
+            title="The Malware Invasion"
+            description="This level involves a dynamic challenge of malware and viruses affecting the user's computer and the user will learn how to avoid downloading suspicious files, mitigating risks and stick to company policy."
+            points={2000}
+            difficulty="easy"
+            isLocked={true}
+            
+          ></GameLevelCard>
+          <GameLevelCard
+            image="OIG3.jpeg"
+            title="Identify Basic Risks"
+            description="This level trains users to spot and mitigate common cybersecurity threats in the workplace, such as unattended laptops and phishing emails, enhancing their ability to safeguard sensitive information"
+            points={2000}
+            difficulty="easy"
+            isLocked={true}
+            
+          ></GameLevelCard>
+          <GameLevelCard
+            image="Ransomware.jpeg"
+            title="Ransomware "
+            description="This level immerses users in a realistic ransomware attack scenario to teach the critical steps of identifying, containing, and mitigating such threats. Users will navigate through stages simulating a ransomware infiltration, learning to manage the crisis by disconnecting affected devices, identifying malware characteristics, and restoring systems safely.  "
+            points={1000}
+            difficulty="super easy"
+            isLocked={true}
+            
+          ></GameLevelCard>
           </div>
         </div>
         <div id="authentication" className={styles.authentication}>

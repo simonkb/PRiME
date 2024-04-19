@@ -82,7 +82,7 @@ const Help = () => {
           <p>Team Member : Yousef F. </p>
           <p> Email: 202051136@uaeu.ac.ae</p>
           <p>Team Member : Yousef H. </p>
-          <p> Email: 202051136@uaeu.ac.ae</p>
+          <p> Email: 202050882@uaeu.ac.ae</p>
           <p>Team Member : Simon D. </p>
           <p> Email: 201950317@uaeu.ac.ae</p>
         </section>
