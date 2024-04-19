@@ -1,75 +1,203 @@
+
 .homeContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-image: url("/homebackground4.webp"); /* Ensure the path is correct */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the background */
-  background-size: cover; /* Cover the entire container without stretching */
-  height: 100vh;
-  padding: 2vh;
-}
-.userProfileContainer {
-  background-color: rgba(
-    8,
-    15,
-    62,
-    0.8
-  ); /* Black background with 50% opacity */
-  padding: 20px;
-  border-radius: 54px; /* Rounded corners */
-  display: start;
-  align-items: center;
-  margin-bottom: 0.2vh;
-  justify-content: center;
-}
-.userInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2vh; /* Responsive vertical spacing */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 
-.avatar {
-  width: 15vw;
-  height: 15vw;
-  border-radius: 50%;
-  border: 2px solid wrgb(0, 0, 0);
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.username {
-  color: #ffffff;
-  font-size: 2vw; /* Responsive font size */
-  margin-top: 1vh; /* Responsive margin */
-}
-
-.score {
-  color: #ffffff;
-  font-size: 2vw; /* Smaller font size than username */
-  margin-bottom: 1vh; /* Responsive margin */
-}
-
-.navigation {
+/* Hero Section */
+.heroSection {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  gap: 1vw; /* Space between buttons */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
 }
 
-.navButton {
-  padding: 1.5vw 3vw; /* Responsive padding */
-  background-color: #2a205a;
-  color: white;
+.heroContent {
+  flex: 1;
+  max-width: 500px;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.heroButton {
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 1vw; /* Smooth rounded corners */
-  font-size: 1.8vw; /* Responsive font size */
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.navButton:hover {
-  background-color: #367c2b;
-  transform: scale(1.1); /* Slightly enlarge on hover */
+.heroButton:hover {
+  background-color: #0056b3;
+}
+
+.heroImageContainer {
+  flex: 1;
+  max-width: 500px;
+}
+
+.heroImage {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Features Section */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  max-width: 64px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.featureDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+/* Most Played Levels Section */
+.levelGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.levelCard {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.levelThumbnail {
+  max-width: 100px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.levelInfo {
+  flex: 1;
+}
+
+.levelTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.levelDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.levelButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.levelButton:hover {
+  background-color: #0056b3;
+}
+
+/* Risk Detection Section */
+.riskDetectionSection {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  color: black;
+}
+
+.riskDetectionDescription {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.riskDetectionButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.riskDetectionButton:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroContent,
+  .heroImageContainer {
+    max-width: 100%;
+  }
+
+  .heroImageContainer {
+    margin-top: 2rem;
+  }
 }
