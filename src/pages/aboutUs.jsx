@@ -1,4 +1,3 @@
-// AboutUs.jsx
 import React from "react";
 import Layout from "./layout";
 import styles from "./aboutUs.module.css";
@@ -61,7 +60,7 @@ const AboutUs = () => {
         <section className={styles.aboutSection}>
           <h2>Careers</h2>
           <p>
-            Interested in joining our team? we aren't hiring right now, but
+            Interested in joining our team? we aren&apos;t hiring right now, but
             maybe in the future.
           </p>
         </section>

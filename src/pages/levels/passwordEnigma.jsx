@@ -89,7 +89,7 @@ const PasswordEnigma = () => {
           <div className={styles.lesson}>
             <h2>Understanding Password Security</h2>
             <p>
-              Learn the essentials of creating a strong password that's hard to
+              Learn the essentials of creating a strong password that&apos;s hard to
               crack.
             </p>
             <button
@@ -140,15 +140,15 @@ const PasswordEnigma = () => {
           <div className={styles.creativeAdvice}>
             <h2>Creative Password Generation</h2>
             <p>
-              Creating a memorable yet strong password can be fun. Here's a
+              Creating a memorable yet strong password can be fun. Here&apos;s a
               method to make strong passwords that are easier to remember:
             </p>
             <ul>
-              <li>Think of a sentence or phrase that's meaningful to you.</li>
+              <li>Think of a sentence or phrase that&apos;s meaningful to you.</li>
               <li>Use the first letter of each word in your sentence.</li>
               <li>
-                Mix in numbers and special characters. For example, 'E' becomes
-                '3', and 'I' becomes '!'.
+                Mix in numbers and special characters. For example, &apos;E&apos; becomes
+                &apos;3&apos;, and &apos;I&apos; becomes &apos;!&apos;.
               </li>
               <li>
                 Capitalize letters in a non-standard pattern to add complexity.
@@ -166,9 +166,9 @@ const PasswordEnigma = () => {
       case "finish":
         return (
           <div className={styles.finish}>
-            <h2>You're Ready!</h2>
+            <h2>You&apos;re Ready!</h2>
             <p>
-              Congratulations! You've successfully created a strong password and
+              Congratulations! You&apos;ve successfully created a strong password and
               are now better equipped to secure your digital life.
             </p>
             {passwordFeedback.includes("Your password is strong!") && (

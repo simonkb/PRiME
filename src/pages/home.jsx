@@ -94,7 +94,7 @@ const Home = () => {
               <div className={styles.levelInfo}>
                 <h3 className={styles.levelTitle}>The Phishing Menace</h3>
                 <p className={styles.levelDescription}>
-                In this challenge, you will face a flood of emails. Some are harmless, while others contain phishing attempts. The goal is to actively make decisions to identify and avoid clicking on malicious links while considering the your company's cybersecurity policies.</p>
+                In this challenge, you will face a flood of emails. Some are harmless, while others contain phishing attempts. The goal is to actively make decisions to identify and avoid clicking on malicious links while considering the your company&apos;s cybersecurity policies.</p>
                 <button
                   className={styles.levelButton}
                   onClick={() => goTolevel("/levels/the-phishing-menace")}
