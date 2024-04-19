@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../config/firebaseConfig";
 import { useRouter } from "next/router";
 import WithAuthProtection from "../../config/withAuthProtection";
+import Loading from "../components/loading";
 
 const Profile = () => {
   const [userData, setUserData] = useState({
@@ -17,21 +18,20 @@ const Profile = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      const mockUserData = {
-        name: "Yousef",
-        email: "Yousef@hotmail.com",
-        joinDate: "Feb 1, 2024",
+      const userData = {
+        name: auth.currentUser.email.split("@")[0],
+        email: auth.currentUser.email,
+        joinDate: auth.currentUser.metadata.creationTime,
+        points: 2500
       };
-      setUserData(mockUserData);
+      setUserData(userData);
       setLoading(false);
-    }, 500);
+    }, 100);
   }, []);
 
   if (loading) {
-    return <Layout>Loading...</Layout>;
+    return <Layout><Loading/></Layout>;
   }
-
-  // Wrap the profile content with a div that sets the full page's background color
   return (
     <Layout>
       <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
@@ -48,6 +48,9 @@ const Profile = () => {
             </p>
             <p>
               <strong>Join Date:</strong> {userData.joinDate}
+            </p>
+            <p>
+              <strong>Points:</strong> {userData.points}
             </p>
             <button
               type="button"
@@ -66,6 +69,7 @@ const Profile = () => {
               Logout
             </button>
           </div>
+
         </div>
       </div>
     </Layout>

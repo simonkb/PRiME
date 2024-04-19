@@ -1,13 +1,22 @@
-import VirtualAssistant from "../../components/VirtualAssistant";
+// import VirtualAssistant from "../../components/virtualAssistant";
 import Layout from "../layout";
 import styles from "./Phishing.module.css";
 import { useState, useRef, useEffect } from "react";
 import WithAuthProtection from "../../../config/withAuthProtection";
 import { auth, db } from "../../../config/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import VirtualAssistant from "../../components/vAssistant";
 const Phishing = () => {
+  // const virtualAssistantRef = useRef();
   const [emails, setEmails] = useState([]);
   const [selectedEmail, setSelectedEmail] = useState(emails[0]);
+  const [content, setContent] = useState({
+    level: "The phishing menace",
+    type: "Question from the user.",
+    email: selectedEmail,
+    userQuestion: "",
+    userAction: "none",
+  });
   useEffect(() => {
     if (selectedEmail) {
       const updatedEmails = [...emails];
@@ -19,12 +28,12 @@ const Phishing = () => {
 
   const handleEmailClick = (email) => {
     setSelectedEmail(email);
-    let ob = {
-      selectedEmail: email,
-      instraction:
-        "Based on the selected email object and its content answer the question provided in userinput",
-    };
-    virtualAssistantRef.current.setCurrentContent(ob);
+    // let ob = {
+    //   selectedEmail: email,
+    //   instraction:
+    //     "Based on the selected email object and its content answer the question provided in userinput",
+    // };
+    // virtualAssistantRef.current.setCurrentContent(ob);
   };
 
   const handleActionClick = (action, email) => {
@@ -32,32 +41,31 @@ const Phishing = () => {
     updatedEmails[selectedEmail.id - 1].pointsEarned +=
       updatedEmails[selectedEmail.id - 1].actions[action];
     setEmails(updatedEmails);
-    virtualAssistantRef.current.handleAction({
-      user: "Simon",
-      level: "The phishing menace",
-      content: email,
-      action: action,
-    });
+    // virtualAssistantRef.current.handleAction({
+    //   user: "Simon",
+    //   level: "The phishing menace",
+    //   content: email,
+    //   action: action,
+    // });
   };
-  const virtualAssistantRef = useRef();
 
   const handleButtonClick = (message) => {
     //
-    if (virtualAssistantRef.current) {
-      virtualAssistantRef.current.showAssistant(
-        message + "Well done. Now please proceed to the next email."
-      );
-    }
+    // if (virtualAssistantRef.current) {
+    //   virtualAssistantRef.current.showAssistant(
+    //     message + "Well done. Now please proceed to the next email."
+    //   );
+    // }
   };
-  useEffect(() => {
-    if (virtualAssistantRef.current) {
-      let ob = {
-        name: "Simon",
-        level: "Phishing menace level",
-      };
-      virtualAssistantRef.current.handleWelcomeMessage(ob);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (virtualAssistantRef.current) {
+  //     let ob = {
+  //       name: "Simon",
+  //       level: "Phishing menace level",
+  //     };
+  //     virtualAssistantRef.current.handleWelcomeMessage(ob);
+  //   }
+  // }, []);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -178,10 +186,10 @@ const Phishing = () => {
             )}
           </div>
         </div>
-        <VirtualAssistant ref={virtualAssistantRef} />
+        {/* <VirtualAssistant ref={virtualAssistantRef} /> */}
+        <VirtualAssistant content={content}></VirtualAssistant>
       </div>
     </Layout>
   );
 };
-
 export default WithAuthProtection(Phishing);

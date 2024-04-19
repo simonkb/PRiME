@@ -3,6 +3,7 @@ import Layout from "./layout";
 import styles from './home.module.css'; 
 import { useRouter } from "next/router";
 import WithAuthProtection from "../../config/withAuthProtection";
+import { auth } from "../../config/firebaseConfig";
 
 const Home = () => {
   const router = useRouter();
@@ -15,7 +16,7 @@ const Home = () => {
         <div className={styles.userProfileContainer}>
           <img src="/Unknown_person.jpg" alt="User Avatar" className={styles.avatar} />
           <div className={styles.userInfo}>
-          <h2 className={styles.username}>Yousef</h2>
+          <h2 className={styles.username}>{auth.currentUser.email.split("@")[0]}</h2>
           <p className={styles.score}>Score: 2500</p>
         </div>
         </div>

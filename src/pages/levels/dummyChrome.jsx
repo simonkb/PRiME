@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./dummyChrome.module.css";
+import VirtualAssistant from "../../components/vAssistant";
 const GoogleSearch = ({ websites }) => {
   const [currentWebsiteIndex, setCurrentWebsiteIndex] = useState(0);
 
@@ -14,6 +15,12 @@ const GoogleSearch = ({ websites }) => {
       prevIndex === websites.length - 1 ? 0 : prevIndex + 1
     );
   };
+  const [content, setContent] = useState({
+    level: "The malware invasion",
+    type: "user questions",
+    userQuestion: "",
+    websiteDetails: websites[currentWebsiteIndex],
+  });
   return (
     <div>
       <div className={styles.newTab}>
@@ -98,6 +105,7 @@ const GoogleSearch = ({ websites }) => {
         </>
       ) : (
         <div>
+          <VirtualAssistant content={content}></VirtualAssistant>
           <div className={styles.websitePreview}>
             <img
               src={websites[currentWebsiteIndex].screenshot}
@@ -106,6 +114,7 @@ const GoogleSearch = ({ websites }) => {
           </div>
 
           <button
+            className="btn btn-primary"
             style={{
               marginInline: 20,
               bottom: 200,
@@ -115,8 +124,8 @@ const GoogleSearch = ({ websites }) => {
             Prev
           </button>
           <button
-            style={{
-            }}
+            className="btn btn-success"
+            style={{}}
             onClick={handleNextWebsite}
           >
             Next
