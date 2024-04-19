@@ -1,0 +1,67 @@
+
+  
+  .pointsContainer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+  }
+  
+  .pointsValue {
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    color: rgb(198, 170, 12);
+  }
+  
+  /* Positive Animation */
+  .pointsAnimation-enter-positive {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  .pointsAnimation-enter-active-positive {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .pointsAnimation-exit-positive {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .pointsAnimation-exit-active-positive {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  /* Negative Animation */
+  .pointsAnimation-enter-negative {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .pointsAnimation-enter-active-negative {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .pointsAnimation-exit-negative {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .pointsAnimation-exit-active-negative {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .pointsChangeAnimation {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 8px;
+  }
