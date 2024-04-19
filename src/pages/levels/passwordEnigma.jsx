@@ -89,8 +89,8 @@ const PasswordEnigma = () => {
           <div className={styles.lesson}>
             <h2>Understanding Password Security</h2>
             <p>
-              Learn the essentials of creating a strong password that&apos;s hard to
-              crack.
+              Learn the essentials of creating a strong password that&apos;s
+              hard to crack.
             </p>
             <button
               onClick={() => setCurrentStage(stages.indexOf("signup"))}
@@ -144,19 +144,22 @@ const PasswordEnigma = () => {
               method to make strong passwords that are easier to remember:
             </p>
             <ul>
-              <li>Think of a sentence or phrase that&apos;s meaningful to you.</li>
+              <li>
+                Think of a sentence or phrase that&apos;s meaningful to you.
+              </li>
               <li>Use the first letter of each word in your sentence.</li>
               <li>
-                Mix in numbers and special characters. For example, &apos;E&apos; becomes
-                &apos;3&apos;, and &apos;I&apos; becomes &apos;!&apos;.
+                Mix in numbers and special characters. For example,
+                &apos;E&apos; becomes &apos;3&apos;, and &apos;I&apos; becomes
+                &apos;!&apos;.
               </li>
               <li>
                 Capitalize letters in a non-standard pattern to add complexity.
               </li>
             </ul>
             <p>
-              Example: "My dog Baxter eats 2 bowls every day!" could become
-              "MdB*e2bed!"
+              Example: &quot;My dog Baxter eats 2 bowls every day!&quot; could
+              become &quot;MdB*e2bed!&quot;
             </p>
             <button onClick={handleTryAgain} className={styles.button}>
               Try Creating a Strong Password Again
@@ -168,8 +171,8 @@ const PasswordEnigma = () => {
           <div className={styles.finish}>
             <h2>You&apos;re Ready!</h2>
             <p>
-              Congratulations! You&apos;ve successfully created a strong password and
-              are now better equipped to secure your digital life.
+              Congratulations! You&apos;ve successfully created a strong
+              password and are now better equipped to secure your digital life.
             </p>
             {passwordFeedback.includes("Your password is strong!") && (
               <button
