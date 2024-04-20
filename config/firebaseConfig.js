@@ -19,9 +19,9 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
-const API_URL = process.env.API_KEY
-const API_KEY = process.env.API_URL
-const ASSISTANT_ID = process.env.ASSISTANT_ID
+const API_URL = process.env.API_KEY;
+const API_KEY = process.env.API_URL;
+const ASSISTANT_ID = process.env.ASSISTANT_ID;
 const useAuth = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -43,14 +43,4 @@ const openai = new OpenAI({
   maxRetries: 10,
 });
 
-export {
-  auth,
-  db,
-  storage,
-  API_KEY,
-  API_URL,
-  useAuth,
-  openai,
-  instruction,
-  ASSISTANT_ID,
-};
+export { auth, db, storage, API_KEY, API_URL, useAuth, openai, ASSISTANT_ID };
