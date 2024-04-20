@@ -46,7 +46,7 @@ const RansomwareLevel = () => {
             />
             <h2>Email Alert</h2>
             <p>
-              You've received an urgent email from what seems like a trusted
+              You&apos;ve received an urgent email from what seems like a trusted
               source asking you to review an attached document.
             </p>
             <p>
@@ -122,7 +122,7 @@ const RansomwareLevel = () => {
             />
             <h2>Identify Malware</h2>
             <p>
-              Use a secure device to look up the ransomware's characteristics
+              Use a secure device to look up the ransomware&apos;s characteristics
               based on the ransom note and file extensions changed.
             </p>
             <button onClick={handleNextStep} className={styles.button}>

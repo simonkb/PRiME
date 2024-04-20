@@ -8,8 +8,8 @@ const WithAuthProtection = (Component) => {
 
     useEffect(() => {
       if (!loading && !user) {
-        alert("Please sign up or login to your account.");
         router.replace("/"); // Redirect unauthenticated users to index page
+        alert("Please sign up or login to your account.");
       }
     }, [user, loading, router]);
 

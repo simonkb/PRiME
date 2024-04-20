@@ -1,0 +1,65 @@
+/* notFound.module.css */
+.notFoundContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .notFoundContent {
+    text-align: center;
+    max-width: 500px;
+    margin-right: 2rem;
+  }
+  
+  .notFoundTitle {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .notFoundDescription {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+  }
+  
+  .homeLink {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .homeLink:hover {
+    background-color: #0056b3;
+  }
+  
+  .notFoundImageContainer {
+    max-width: 500px;
+  }
+  
+  .notFoundImage {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .notFoundContainer {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+      padding: 2rem;
+    }
+  
+    .notFoundContent {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }

@@ -1,19 +1,29 @@
-.vectorIcon {
- height: 38px;
- width: 40px;
- margin-bottom: 13px;
-}
-.prime {
-  display: inline-block;
-  color: rgb(0, 0, 0);
-}
+
 .logo {
-  font-size: var(--font-size-31xl);
-  flex-direction: row;
-  font-family: var(--font-racing-sans-one);
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
-.rotateIcon {
-  animation: rotateAnimation 4s linear infinite; 
+
+.logoIcon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.vectorIcon {
+  width: 100%;
+  height: 100%;
+  animation: rotateAnimation 4s linear infinite;
+}
+
+.logoText {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 @keyframes rotateAnimation {

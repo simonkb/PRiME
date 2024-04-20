@@ -1,0 +1,131 @@
+.landingPage {
+  background-color: #1c1c28;
+  color: var(--medley-neutral);
+  /* font-family: var(--font-ropa-sans); */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-sm);
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+.appName {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: larger;
+}
+.bars {
+  width: 40px;
+  border-radius: var(--br-81xl);
+  background-color: var(--medley-neutral);
+  height: 2px;
+}
+.motto {
+  width: 100%;
+  font-size: var(--font-size-21xl);
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-top: var(--gap-base);
+}
+.getStartedButton {
+  border-radius: var(--br-81xl);
+  background: linear-gradient(267.28deg, #7b61ff, #aa82ff);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-base);
+  font-size: var(--font-size-base);
+  margin-top: var(--gap-29xl);
+  align-items: center;
+  justify-content: center;
+}
+.homeText {
+  position: relative;
+  top: 150px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-29xl);
+  z-index: 1000;
+}
+.scrollText {
+  font-weight: 600;
+  animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.downWardArrow {
+  width: 16px;
+  height: 24px;
+  animation:bounce 1s infinite alternate;
+}
+.scrollDownContainer {
+  position: relative;
+  top: 200px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--medley-neutral);
+  font-family: var(--font-open-sans);
+}
+.bar2 {
+  width: 40px;
+  position: relative;
+  border-radius: var(--br-81xl);
+  background-color: var(--medley-accent);
+  height: 2px;
+}
+.mission {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--medley-accent);
+}
+.missionStatement {
+  width: 100%;
+  font-size: var(--font-size-13xl);
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  margin-top: var(--gap-29xl);
+}
+.levels{
+  position: relative;
+}
+.levelsContainer{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 16px;
+  overflow:auto;
+}
+.cardContainer{
+  display: grid;
+  width: 100%;
+  overflow:scroll;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-content: center;
+  margin-inline: 25px;
+}
+.aboutUsContainer {
+  position: relative;
+  margin-inline: 40px;
+  padding-top: 180px;
+}
+.authentication{
+  position: relative;
+  width: 100%
+}

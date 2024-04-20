@@ -86,7 +86,7 @@ const LandingPage = () => {
           </div>
           <div className={styles.cardContainer}>
             <Card
-              image={"policy.jpeg"}
+              image={"/policy.jpeg"}
               title={"Policy Compliance"}
               description={
                 "Elevate your workforce with our tailored simulation and training solutions, illustrating the advantages of adhering to company policies and the consequences of non-compliance."
@@ -108,7 +108,7 @@ const LandingPage = () => {
               description={
                 "Enhance your team's readiness to handle unforeseen challenges with our incident response training. We simulate real-world scenarios, empowering your staff to effectively respond to incidents and mitigate potential damages swiftly and effectively."
               }
-              image={"incident.png"}
+              image={"/incident.png"}
               image2={"/frame-89.svg"}
               topBarColor={"0 2px purple inset"}
             ></Card>
