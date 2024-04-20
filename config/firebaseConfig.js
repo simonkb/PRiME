@@ -19,8 +19,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
-const API_URL = process.env.API_KEY;
-const API_KEY = process.env.API_URL;
+const API_URL = process.env.API_URL;
+const API_KEY = process.env.API_KEY;
 const ASSISTANT_ID = process.env.ASSISTANT_ID;
 const useAuth = () => {
   const [user, setUser] = useState(null);
