@@ -1,9 +1,8 @@
-
 .homeContainer {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .sectionTitle {
@@ -77,8 +76,12 @@
   border-radius: 0.5rem;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
+.featureCard:hover {
+  transform: scale(1.05);
+}
 .featureIcon {
   max-width: 64px;
   height: auto;
@@ -112,8 +115,12 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease;
 }
 
+.levelCard:hover {
+  transform: scale(1.05);
+}
 .levelThumbnail {
   max-width: 100px;
   height: auto;
@@ -161,8 +168,11 @@
   text-align: center;
   margin-top: 3rem;
   color: black;
+  transition: transform 0.3s ease;
 }
-
+.riskDetectionSection:hover {
+  transform: scale(1.05);
+}
 .riskDetectionDescription {
   font-size: 1.2rem;
   line-height: 1.5;
@@ -185,7 +195,6 @@
   background-color: #0056b3;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .heroSection {
     flex-direction: column;

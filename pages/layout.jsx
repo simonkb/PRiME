@@ -6,7 +6,10 @@ import Footer from "../src/components/footer";
 import styles2 from "./layout.module.css";
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div style={{
+      backgroundColor:"#11121d",
+      color: "white"
+    }}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
           <Logo />

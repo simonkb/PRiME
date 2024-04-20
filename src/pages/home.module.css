@@ -1,9 +1,8 @@
-
 .homeContainer {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .sectionTitle {
@@ -78,7 +77,6 @@
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .featureIcon {
   max-width: 64px;
   height: auto;

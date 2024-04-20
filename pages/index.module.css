@@ -1,9 +1,8 @@
 .landingPage {
-  background-color: #1c1c28;
-  color: var(--medley-neutral);
-  /* font-family: var(--font-ropa-sans); */
+  background-color: #11121d;
+  color: #fff;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: var(--font-size-sm);
+  font-size: 14px;
   overflow: hidden;
   text-align: center;
   width: 100%;
@@ -19,26 +18,26 @@
 }
 .bars {
   width: 40px;
-  border-radius: var(--br-81xl);
-  background-color: var(--medley-neutral);
+  border-radius: 100px;
+  background-color: #fff;
   height: 2px;
 }
 .motto {
   width: 100%;
-  font-size: var(--font-size-21xl);
+  font-size: 40px;
   letter-spacing: -0.02em;
   text-align: center;
-  margin-top: var(--gap-base);
+  margin-top: 16px;
 }
 .getStartedButton {
-  border-radius: var(--br-81xl);
+  border-radius: 100px;
   background: linear-gradient(267.28deg, #7b61ff, #aa82ff);
   backdrop-filter: blur(4px);
   display: flex;
   flex-direction: row;
-  padding: var(--padding-base);
-  font-size: var(--font-size-base);
-  margin-top: var(--gap-29xl);
+  padding: 16px;
+  font-size: 16px;
+  margin-top: 48px;
   align-items: center;
   justify-content: center;
 }
@@ -48,8 +47,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-29xl);
+  gap: 48px;
   z-index: 1000;
+  color: #fff;
 }
 .scrollText {
   font-weight: 600;
@@ -66,7 +66,7 @@
 .downWardArrow {
   width: 16px;
   height: 24px;
-  animation:bounce 1s infinite alternate;
+  animation: bounce 1s infinite alternate;
 }
 .scrollDownContainer {
   position: relative;
@@ -76,15 +76,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: var(--font-size-lg);
-  color: var(--medley-neutral);
-  font-family: var(--font-open-sans);
+  font-size: 18px;
+  color: #fff;
 }
 .bar2 {
   width: 40px;
   position: relative;
-  border-radius: var(--br-81xl);
-  background-color: var(--medley-accent);
+  border-radius: 100px;
+  background-color: #f68e5f;
   height: 2px;
 }
 .mission {
@@ -92,30 +91,30 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: var(--medley-accent);
+  color: #f68e5f;
 }
 .missionStatement {
   width: 100%;
-  font-size: var(--font-size-13xl);
+  font-size: 32px;
   line-height: 40px;
   text-align: center;
   display: inline-block;
-  margin-top: var(--gap-29xl);
+  margin-top: 48px;
 }
-.levels{
+.levels {
   position: relative;
 }
-.levelsContainer{
+.levelsContainer {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 16px;
-  overflow:auto;
+  overflow: auto;
 }
-.cardContainer{
+.cardContainer {
   display: grid;
   width: 100%;
-  overflow:scroll;
+  overflow: scroll;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   justify-content: center;
   margin-inline: 25px;
@@ -125,7 +124,7 @@
   margin-inline: 40px;
   padding-top: 180px;
 }
-.authentication{
+.authentication {
   position: relative;
-  width: 100%
+  width: 100%;
 }

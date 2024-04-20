@@ -4,7 +4,6 @@ import styles from "./settings.module.css";
 import WithAuthProtection from "../config/withAuthProtection";
 
 const Settings = () => {
-  // Example state hooks for settings
   const [soundVolume, setSoundVolume] = useState(50);
   const [musicVolume, setMusicVolume] = useState(50);
   const [gameDifficulty, setGameDifficulty] = useState("Normal");
