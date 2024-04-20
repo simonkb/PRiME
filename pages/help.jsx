@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Layout from "./layout"; // Ensure the correct path
+import Layout from "./layout";
 import styles from "./help.module.css";
-import VirtualAssistant from "../src/components/VirtualAssistant"; // Verify the path is correct
-
 const faqs = [
   {
     id: 1,
@@ -87,7 +85,8 @@ const Help = () => {
           <p> Email: 201950317@uaeu.ac.ae</p>
         </section>
 
-        <section id="3"
+        <section
+          id="3"
           className={styles.helpSection}
           style={{ position: "relative" }}
         >
@@ -96,7 +95,6 @@ const Help = () => {
             Our virtual assistant is here to help you 24/7 with any questions
             you may have.
           </p>
-          <VirtualAssistant />
         </section>
       </div>
     </Layout>
