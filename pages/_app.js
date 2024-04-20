@@ -2,18 +2,15 @@ import { Fragment, useEffect } from "react";
 import Head from "next/head";
 import "./global.css";
 import { useRouter } from "next/router";
+import { auth } from "../config/firebaseConfig";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Your authentication logic goes here
-    const isAuthenticated = false;/* Check if the user is authenticated */ false;
-
+    const isAuthenticated = auth.currentUser;
     if (isAuthenticated) {
-      // If authenticated, redirect to the home page
       router.push("/home");
     }
-    // If not authenticated, stay on the current page
   }, []);
   return (
     <Fragment>

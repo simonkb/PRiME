@@ -1,10 +1,13 @@
-import styles from "./logo.module.css";
+import React from 'react';
+import styles from './logo.module.css';
+
 const Logo = () => {
   return (
     <div className={styles.logo}>
-      
-      <img className={`${styles.vectorIcon} ${styles.rotateIcon}`} alt="" src="/vector.svg" />
-      <div className={styles.prime}>PRiME</div>
+      <div className={styles.logoIcon}>
+        <img src="/vector.svg" alt="Logo Icon" className={styles.vectorIcon} />
+      </div>
+      <div className={styles.logoText}>PRiME</div>
     </div>
   );
 };

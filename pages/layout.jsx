@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../components/header.module.css";
-import Logo from "../components/logo";
-import Footer from "../components/footer";
+import styles from "../src/components/header.module.css";
+import Logo from "../src/components/logo";
+import Footer from "../src/components/footer";
 import styles2 from "./layout.module.css";
 const Layout = ({ children }) => {
   return (

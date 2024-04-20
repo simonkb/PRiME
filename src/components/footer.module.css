@@ -1,73 +1,78 @@
-/* Footer.module.css */
 .footer {
-    color:white;
-    padding: 40px;
-    background-color: var(--color-gray-300);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    border-top-width: 10px;
-    border-top-color: rgb(71, 0, 137);
-    border-top-style: solid;  
-    z-index: 1000;
-    position: relative;
-  }
-  
-  .promotion {
-    margin-bottom: 20px;
-    font-size: x-large;
-  }
-  
-  .columns {
-    display: flex;
-    flex-wrap: wrap; /* Allow columns to wrap onto the next line */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-bottom: 20px;
-  }
-  
-  .column {
-    flex: 1;
-    margin-right: 10px;
-    text-align: center;
-  }
-  
-  .column h3 {
-    font-size: 18px;
-    margin-left: 50px;
-    text-align: center;
-  }
-  
-  .socialMedia {
-    display: flex;
-    align-items: center;
-    text-align:center;
-    margin-bottom: 10px;
-    justify-content: center;
-  }
-  
-  .socialMedia h1 {
-    margin-bottom: 10px;
-    align-items: center;
-    text-align:center;
-    justify-content: center;
-  }
-  .socialMedia ul {
-    list-style: none;
+  background-color: #9595b0; 
+  color: #333; 
+  padding: 1px 4; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%; 
+}
+
+.columns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; 
+  max-width: 1200px; 
+  margin-top: 2px; 
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
     padding: 0;
-    margin: 0;
-    display: flex; 
-    justify-content: center;
-  }
-  
-  .socialMedia ul li {
-    margin-left: 30px; 
-    margin-right: 5px; 
-    justify-content: center;
 
-  }
+}
 
-  .copyRight {
-    text-align: center;
-  }
-  
+.column h3 {
+  color: #ffffff; 
+  margin-bottom: 1px; 
+  font-size: 16px; 
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  color: inherit; 
+  margin: 1px 0; 
+  cursor: pointer;
+  transition: color 0.3s;
+  font-size: 14px; 
+}
+
+.column ul li:hover {
+  color: #ffffff; 
+}
+
+.socialMedia {
+  margin-top: 1px; 
+  display: flex;
+  justify-content: center;
+}
+
+.socialMedia a {
+  margin: 0 90px; 
+}
+
+.socialMedia img {
+  filter: brightness(0) invert(1); 
+  width: 20px; 
+  height: 20px;
+  transition: transform 0.3s;
+}
+
+.socialMedia img:hover {
+  transform: scale(1.2); 
+}
+
+.copyRight {
+  margin-top: 1px; 
+  font-size: 12px;
+  color: #333; 
+}

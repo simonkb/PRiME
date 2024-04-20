@@ -4,11 +4,18 @@ import Card from "../components/card";
 import styles from "./index.module.css";
 import GameLevelCard from "../components/GameLevelCard";
 import Footer from "../components/footer";
-import AuthenticationView from "../components/loginSignup";
+import LoginSignup from "../components/loginSignup";
 import { useRouter } from "next/router";
-
+import { useEffect, useState } from "react";
+import { useAuth } from "../../config/firebaseConfig";
 const LandingPage = () => {
   const router = useRouter();
+  const { user, loading } = useAuth();
+  useEffect(() => {
+    if (user) {
+      router.push("/home");
+    }
+  }, [loading]);
   const scrollToDiv = (targetDiv) => {
     const targetElement = document.getElementById(targetDiv);
     if (targetElement) {
@@ -79,7 +86,7 @@ const LandingPage = () => {
           </div>
           <div className={styles.cardContainer}>
             <Card
-              image={"policy.jpeg"}
+              image={"/policy.jpeg"}
               title={"Policy Compliance"}
               description={
                 "Elevate your workforce with our tailored simulation and training solutions, illustrating the advantages of adhering to company policies and the consequences of non-compliance."
@@ -101,7 +108,7 @@ const LandingPage = () => {
               description={
                 "Enhance your team's readiness to handle unforeseen challenges with our incident response training. We simulate real-world scenarios, empowering your staff to effectively respond to incidents and mitigate potential damages swiftly and effectively."
               }
-              image={"incident.png"}
+              image={"/incident.png"}
               image2={"/frame-89.svg"}
               topBarColor={"0 2px purple inset"}
             ></Card>
@@ -111,7 +118,7 @@ const LandingPage = () => {
           <h1>Levels and Categories</h1>
           <div className={styles.levelsContainer}>
             <GameLevelCard
-              image="policy.jpeg"
+              image="/policy.jpeg"
               title="Basic Policy"
               description="This is a basic policy level"
               points={2000}
@@ -122,7 +129,7 @@ const LandingPage = () => {
               }}
             ></GameLevelCard>
             <GameLevelCard
-              image="risk.png"
+              image="/risk.png"
               title="Basic Risks"
               description="This is a basic risks level"
               points={2000}
@@ -130,7 +137,7 @@ const LandingPage = () => {
               isLocked={true}
             ></GameLevelCard>
             <GameLevelCard
-              image="incident.png"
+              image="/incident.png"
               title="Basic Risks"
               description="This is a basic risks level"
               points={2000}
@@ -138,7 +145,7 @@ const LandingPage = () => {
               isLocked={true}
             ></GameLevelCard>
             <GameLevelCard
-              image="risk.png"
+              image="/risk.png"
               title="Basic Risks"
               description="This is a basic risks level"
               points={2000}
@@ -148,12 +155,11 @@ const LandingPage = () => {
           </div>
         </div>
         <div id="authentication" className={styles.authentication}>
-          <AuthenticationView />
+          <LoginSignup />
         </div>
       </div>
       <Footer></Footer>
     </div>
   );
 };
-
 export default LandingPage;

@@ -1,0 +1,157 @@
+#top_bar {
+  text-align: end;
+  margin: 10px;
+}
+.grid :hover {
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.grid {
+  text-decoration: none;
+  margin: 10px;
+}
+.links :hover {
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+.links {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-inline: 5px;
+}
+
+.signbutton {
+  background-color: rgb(66, 66, 209);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 2px;
+  color: white;
+  font-size: 14px;
+  width: 80px;
+  height: 33px;
+}
+.searchBar {
+  min-width: 50%;
+  height: 30px;
+  border-radius: 40px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  padding: 10px;
+  border: solid thin rgba(201, 199, 199, 0.507);
+  outline: none;
+  padding-inline: 20px;
+}
+.searchBar:hover {
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  border-color: rgba(223, 225, 229, 0);
+}
+.searchButton:hover {
+  background: #e1e1e1;
+  border: 0.3px solid #d0d0d0;
+}
+.lucky:hover {
+  background: #e1e1e1;
+  border: 0.3px solid #d0d0d0;
+}
+.searchButton,
+.lucky {
+  margin: 20px;
+  padding: 5px;
+  width: 150px;
+  height: 33px;
+  border-radius: 5px;
+  background-color: rgba(235, 235, 235, 0.527);
+  text-align: center;
+  border: thin rgba(199, 199, 204, 0.884);
+}
+.advanced_search {
+  font-family: Arial, Helvetica, sans-serif;
+  color: blue;
+  margin: 10px;
+}
+.search {
+  text-align: center;
+  padding-top: 10%;
+}
+.websitePreview {
+  margin-top: 20px;
+}
+
+.websitePreview img {
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+}
+
+.chromeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 8px;
+  border-bottom: 1px solid #dfe1e5;
+  color: #5f6368;
+}
+.newTab {
+  color: white;
+  padding-left: 5px;
+  width: fit-content;
+  background-color: #868686;
+  border-top-left-radius: 10px;
+  padding: 3px;
+}
+.tab {
+  display: flex;
+  align-items: center;
+}
+
+.tabTitle {
+  margin-right: 8px;
+}
+
+.tabIcons {
+  display: flex;
+}
+
+.tabIcon {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.addressBar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+
+  border: 1px solid #3779fd;
+  border-radius: 40px;
+  width: 100%;
+  margin-inline: 10px;
+}
+
+.securityIcon {
+  margin-right: 8px;
+}
+
+.addressInput {
+  flex: 1;
+  margin-right: 8px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.url {
+  color: #5f6368;
+  margin-right: 8px;
+}
+
+.icon {
+  margin-right: 8px;
+  cursor: pointer;
+}
