@@ -143,7 +143,9 @@ const Home = () => {
           </p>
           <button
             className={styles.riskDetectionButton}
-            onClick={() => goTolevel("/risk-detection")}
+            onClick={()=>{
+              router.push("http://127.0.0.1:5000")
+            }}
           >
             Go to Live Risk Detection
           </button>
